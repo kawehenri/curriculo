@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Currículo Online - Henrique Kawê</title>
+<title>Portifólio Online - Henrique Kawê</title>
 <style>
   /* ======== GLOBAL ======== */
   * { box-sizing: border-box; }
@@ -51,28 +51,29 @@
     flex:2; height:16px; border-radius:8px; background:#333; overflow:hidden; margin-left:15px; position:relative;
   }
   .skill-bar span {
-    display:block; height:100%; border-radius:8px; position:absolute; left:0; top:0; width:0;
+    display:block; height:100%; border-radius:8px; width:0;
+    background: linear-gradient(90deg,#00bcd4,#2196f3);
     transition: width 1.5s ease-in-out;
   }
+  .skill-percent { margin-left:12px; font-size:0.95rem; font-weight:600; color:#b2dfdb; min-width:40px; text-align:right; }
+
+  /* Cores específicas */
   .tech span[data-width="70%"],
   .tech span[data-width="60%"],
   .db span[data-width="65%"],
   .school span[data-width="70%"],
-  .school span[data-width="60%"] {
-    background: linear-gradient(90deg,#ffe082,#ffc107);
-  }
-  .school span[data-width="75%"] {
-    background: linear-gradient(90deg,#43ea7d,#388e3c);
-  }
-  .tech span:not([data-width="70%"]):not([data-width="60%"]) { background: linear-gradient(90deg,#00bcd4,#2196f3);}
-  .db span:not([data-width="65%"]){ background: linear-gradient(90deg,#ff9800,#ffc107);}
-  .school span:not([data-width="70%"]):not([data-width="60%"]){ background: linear-gradient(90deg,#43ea7d,#388e3c);}
-  .skill-percent { margin-left:12px; font-size:0.95rem; font-weight:600; color:#b2dfdb; min-width:40px; }
+  .school span[data-width="60%"] { background: linear-gradient(90deg,#ffe082,#ffc107); }
+  .school span[data-width="75%"],
+  .school span[data-width="80%"],
+  .school span[data-width="90%"],
+  .school span[data-width="85%"] { background: linear-gradient(90deg,#43ea7d,#388e3c); }
+  .db span[data-width="80%"],
+  .db span[data-width="85%"] { background: linear-gradient(90deg,#ff9800,#ffc107); }
 
   @media (max-width:600px){
     .skill { flex-direction:column; align-items:flex-start; }
     .skill-bar { margin-left:0; width:100%; margin-top:6px;}
-    .skill-percent { margin-left:0; margin-top:4px;}
+    .skill-percent { margin-left:0; margin-top:4px; width:100%; text-align:right;}
   }
 
   /* ======== TAGS (SOCIOEMOCIONAIS) ======== */
@@ -81,13 +82,7 @@
   }
 
   /* ======== CARROSSEL CERTIFICADOS ======== */
-  .carousel {
-    position: relative;
-    max-width: 700px;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 12px;
-  }
+  .carousel { position: relative; max-width: 700px; margin: 20px auto; overflow: hidden; border-radius: 12px; }
   .carousel img { width:100%; display:none; border-radius:10px;}
   .carousel img.active { display:block; }
   .carousel-btn {
@@ -105,112 +100,101 @@
 </head>
 <body>
 
-  <!-- ======== HEADER ======== -->
-  <header>
-    <img src="perfil.jpeg" alt="Foto de Henrique Kawê">
-    <h1>Henrique Kawê</h1>
-    <p>Desenvolvimento de Sistemas | Ensino Médio (em formação)</p>
-    <p>Email: kawehenri@gmail.com | Telefone: (61) 9 8627-9308 | Samambaia Norte - DF</p>
-    <div class="social-links">
-      <a href="https://github.com/kawehenri" target="_blank" rel="noopener">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">LinkedIn</a> | 
-      <a href="KAWE HENRIQUE.pdf" download>Download PDF</a>
-    </div>
-  </header>
+<header>
+  <img src="perfil.jpeg" alt="Foto de Henrique Kawê">
+  <h1>Henrique Kawê</h1>
+  <p>Desenvolvimento de Sistemas | Ensino Médio (em formação)</p>
+  <p>Email: kawehenri@gmail.com | Telefone: (61) 9 8627-9308 | Samambaia Norte - DF</p>
+  <div class="social-links">
+    <a href="https://github.com/kawehenri" target="_blank" rel="noopener">GitHub</a> | 
+    <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">LinkedIn</a> | 
+    <a href="KAWE HENRIQUE.pdf" download>Download de Currículo em PDF</a>
+  </div>
+</header>
 
-  <!-- ======== SOBRE ======== -->
-  <section class="sobre">
-    <h2>Sobre Mim</h2>
-    <p>Sou estudante do curso Técnico em Desenvolvimento de Sistemas pelo SENAI, com experiência em projetos escolares de programação, banco de dados e automação. Tenho facilidade em trabalhar em equipe, sou comunicativo, organizado e busco constantemente aprender novas tecnologias e boas práticas de desenvolvimento. Meu objetivo é aplicar e expandir meus conhecimentos em ambientes profissionais, contribuindo de forma efetiva para projetos inovadores.</p>
-  </section>
+<section class="sobre">
+  <h2>Sobre Mim</h2>
+  <p>Sou estudante do curso Técnico em Desenvolvimento de Sistemas pelo SENAI, com experiência em projetos escolares de programação, banco de dados e automação. Tenho facilidade em trabalhar em equipe, sou comunicativo, organizado e busco constantemente aprender novas tecnologias e boas práticas de desenvolvimento. Meu objetivo é aplicar e expandir meus conhecimentos em ambientes profissionais, contribuindo de forma efetiva para projetos inovadores.</p>
+</section>
 
-  <!-- ======== COMPETÊNCIAS ======== -->
-  <section>
-    <h2>Competências</h2>
+<section>
+  <h2>Competências</h2>
+  <div class="skills-group">
+    <h3 style="color:#00bcd4; margin-bottom:10px;">Tecnologia & Programação</h3>
+    <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">HTML</span><div class="skill-bar tech"><span data-width="85%"></span></div><span class="skill-percent">85%</span></div>
+    <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">CSS</span><div class="skill-bar tech"><span data-width="80%"></span></div><span class="skill-percent">80%</span></div>
+    <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">JavaScript</span><div class="skill-bar tech"><span data-width="70%"></span></div><span class="skill-percent">70%</span></div>
+    <div class="skill"><span class="skill-icon">🐍</span><span class="skill-name">Python</span><div class="skill-bar tech"><span data-width="60%"></span></div><span class="skill-percent">60%</span></div>
+    <div class="skill"><span class="skill-icon">🗄️</span><span class="skill-name">Banco de Dados (MySQL)</span><div class="skill-bar db"><span data-width="65%"></span></div><span class="skill-percent">65%</span></div>
+    <div class="skill"><span class="skill-icon">🖥️</span><span class="skill-name">Pacote Office</span><div class="skill-bar tech"><span data-width="80%"></span></div><span class="skill-percent">80%</span></div>
+  </div>
+  <div class="skills-group">
+    <h3 style="color:#43ea7d; margin-bottom:10px;">Matérias Escolares</h3>
+    <div class="skill"><span class="skill-icon">📐</span><span class="skill-name">Matemática</span><div class="skill-bar school"><span data-width="90%"></span></div><span class="skill-percent">90%</span></div>
+    <div class="skill"><span class="skill-icon">📊</span><span class="skill-name">Física</span><div class="skill-bar school"><span data-width="70%"></span></div><span class="skill-percent">75%</span></div>
+    <div class="skill"><span class="skill-icon">📝</span><span class="skill-name">Redação</span><div class="skill-bar school"><span data-width="85%"></span></div><span class="skill-percent">85%</span></div>
+    <div class="skill"><span class="skill-icon">🗣️</span><span class="skill-name">Língua Portuguesa</span><div class="skill-bar school"><span data-width="75%"></span></div><span class="skill-percent">80%</span></div>
+    <div class="skill"><span class="skill-icon">🌎</span><span class="skill-name">Inglês</span><div class="skill-bar school"><span data-width="60%"></span></div><span class="skill-percent">60%</span></div>
+  </div>
+</section>
 
-    <div class="skills-group">
-      <h3 style="color:#00bcd4; margin-bottom:10px;">Tecnologia & Programação</h3>
-      <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">HTML</span><div class="skill-bar tech"><span data-width="85%"></span></div><span class="skill-percent">85%</span></div>
-      <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">CSS</span><div class="skill-bar tech"><span data-width="80%"></span></div><span class="skill-percent">80%</span></div>
-      <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">JavaScript</span><div class="skill-bar tech"><span data-width="70%"></span></div><span class="skill-percent">70%</span></div>
-      <div class="skill"><span class="skill-icon">🐍</span><span class="skill-name">Python</span><div class="skill-bar tech"><span data-width="60%"></span></div><span class="skill-percent">60%</span></div>
-      <div class="skill"><span class="skill-icon">🗄️</span><span class="skill-name">Banco de Dados (MySQL)</span><div class="skill-bar db"><span data-width="65%"></span></div><span class="skill-percent">65%</span></div>
-      <div class="skill"><span class="skill-icon">🖥️</span><span class="skill-name">Pacote Office</span><div class="skill-bar tech"><span data-width="80%"></span></div><span class="skill-percent">80%</span></div>
-    </div>
+<section>
+  <h2>Competências Socioemocionais</h2>
+  <div class="tags">
+    <span>Empatia</span>
+    <span>Comunicação</span>
+    <span>Resiliência</span>
+    <span>Colaboração</span>
+    <span>Organização</span>
+    <span>Responsabilidade</span>
+    <span>Proatividade</span>
+    <span>Autonomia</span>
+    <span>Flexibilidade</span>
+    <span>Adaptabilidade</span>
+    <span>Iniciativa</span>
+    <span>Autoconfiança</span>
+    <span>Respeito e Ética</span>
+  </div>
+</section>
 
-    <div class="skills-group">
-      <h3 style="color:#43ea7d; margin-bottom:10px;">Matérias Escolares</h3>
-      <div class="skill"><span class="skill-icon">📐</span><span class="skill-name">Matemática</span><div class="skill-bar school"><span data-width="90%"></span></div><span class="skill-percent">90%</span></div>
-      <div class="skill"><span class="skill-icon">📊</span><span class="skill-name">Física</span><div class="skill-bar school"><span data-width="70%"></span></div><span class="skill-percent">75%</span></div>
-      <div class="skill"><span class="skill-icon">📝</span><span class="skill-name">Redação</span><div class="skill-bar school"><span data-width="85%"></span></div><span class="skill-percent">85%</span></div>
-      <div class="skill"><span class="skill-icon">🗣️</span><span class="skill-name">Língua Portuguesa</span><div class="skill-bar school"><span data-width="75%"></span></div><span class="skill-percent">80%</span></div>
-      <div class="skill"><span class="skill-icon">🌎</span><span class="skill-name">Inglês</span><div class="skill-bar school"><span data-width="60%"></span></div><span class="skill-percent">60%</span></div>
-    </div>
-  </section>
+<section>
+  <h2>Experiências & Projetos</h2>
+  <ul>
+    <li><strong>Sistema de Irrigação Automatizado</strong> — Projeto automatizado com diversas partes como elétrica, que funciona com o arduíno e o aplicativo que controla a irrigação, usado para  facilitar a vida do cliente que precisa disso a distância.</li>
+    <li><strong>Organização de Eventos Escolares</strong> — Suporte técnico e liderança em disciplinas gerais.</li>
+    <li><strong>Projetos</strong> — Sistemas em Python, HTML, CSS, JS e MySQL, todos disponíveis no GitHub.</li>
+  </ul>
+</section>
 
-  <!-- ======== COMPETÊNCIAS SOCIOEMOCIONAIS ======== -->
-  <section>
-    <h2>Competências Socioemocionais</h2>
-    <div class="tags">
-      <span>Empatia</span>
-      <span>Comunicação</span>
-      <span>Resiliência</span>
-      <span>Colaboração</span>
-      <span>Organização</span>
-      <span>Responsabilidade</span>
-      <span>Proatividade</span>
-      <span>Autonomia</span>
-      <span>Flexibilidade</span>
-      <span>Adaptabilidade</span>
-      <span>Iniciativa</span>
-      <span>Autoconfiança</span>
-      <span>Respeito e Ética</span>
-    </div>
-  </section>
+<section>
+  <h2>Certificados</h2>
+  <div class="carousel">
+    <img src="certificado.jpeg" alt="Certificado de Lógica de Programação" class="active">
+    <img src="certificado1.jpeg" alt="Certificado de Git e GitHub">
+    <img src="certificado2.jpeg" alt="Certificado de Pacote Office">
+    <img src="certificado3.jpeg" alt="Certificado de Python">
+    <img src="certificado4.png" alt="Certificado de Java">
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
 
-  <!-- ======== EXPERIÊNCIAS & PROJETOS ======== -->
-  <section>
-    <h2>Experiências & Projetos</h2>
-    <ul>
-      <li><strong>Sistema de Irrigação Automatizado</strong> — Projeto com Arduino, sensor de umidade e bomba de água.</li>
-      <li><strong>Organização de Eventos Escolares</strong> — Suporte técnico e liderança em disciplinas gerais.</li>
-      <li><strong>Projetos Acadêmicos</strong> — Sistemas em Python, HTML, CSS, JS e MySQL.</li>
-    </ul>
-  </section>
+<section>
+  <h2>Idiomas</h2>
+  <p>Português — Nativo</p>
+  <p>Inglês — Básico</p>
+</section>
 
-  <!-- ======== CERTIFICADOS (CARROSSEL) ======== -->
-  <section>
-    <h2>Certificados</h2>
-    <div class="carousel">
-      <img src="certificado.jpeg" alt="Certificado de Lógica de Programação" class="active">
-      <img src="certificado1.jpeg" alt="Certificado de Git e GitHub">
-      <img src="certificado2.jpeg" alt="Certificado de Pacote Office">
-      <img src="certificado3.jpeg" alt="Certificado de Python">
-      <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
-    </div>
-  </section>
-
-  <!-- ======== IDIOMAS ======== -->
-  <section>
-    <h2>Idiomas</h2>
-    <p>Português — Nativo</p>
-    <p>Inglês — Básico</p>
-  </section>
-
-  <!-- ======== CONTATO ======== -->
-  <section>
-    <h2>Contato</h2>
-    <p>Estou em busca de oportunidades de estágio e desenvolvimento na área de tecnologia e também em áreas gerais dentro do mercado de trabalho. Entre em contato comigo por email, LinkedIn ou WhatsApp, será um prazer conversar!</p>
-  </section>
+<section>
+  <h2>Contato</h2>
+  <p>Estou em busca de oportunidades de estágio e desenvolvimento na área de tecnologia e também em áreas gerais dentro do mercado de trabalho. Entre em contato comigo por email, LinkedIn ou WhatsApp, será um prazer conversar!</p>
+</section>
 
 <script>
   // Animação das barras
   window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.skill-bar span').forEach(bar => {
-      setTimeout(() => {
-        bar.style.width = bar.getAttribute('data-width');
-      }, 400);
+      setTimeout(() => { bar.style.width = bar.getAttribute('data-width'); }, 400);
     });
   });
 
@@ -230,5 +214,6 @@
     showImage(index);
   });
 </script>
+
 </body>
 </html>
