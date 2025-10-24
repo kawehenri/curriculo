@@ -3,98 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portifólio Online - Henrique Kawê</title>
+<title>Currículo - Kawê Henrique</title>
 <style>
   /* ======== GLOBAL ======== */
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #f5f5f5;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #374151;
+    line-height: 1.4;
+    font-size: 10pt;
   }
-  h1,h2,h3 { margin:0; }
-  section { max-width: 900px; margin: 40px auto; padding: 25px 20px; border-radius: 12px; background: #1e1e1e; box-shadow: 0 0 20px rgba(0,0,0,0.6);}
-  a { color: #00bcd4; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  
+  /* ======== LAYOUT PARA IMPRESSÃO ======== */
+  @page {
+    size: A4;
+    margin: 2cm;
+    @top-left { content: ""; }
+    @top-right { content: ""; }
+    @bottom-left { content: ""; }
+    @bottom-right { content: ""; }
+  }
+  
+  h1, h2, h3 { margin: 0; }
+  h1 { font-size: 18pt; font-weight: bold; }
+  h2 { 
+    font-size: 14pt; 
+    font-weight: bold; 
+    margin-top: 20pt; 
+    margin-bottom: 8pt; 
+    color: #111827;
+    text-transform: uppercase;
+  }
+  h3 { font-size: 12pt; font-weight: bold; margin-top: 15pt; margin-bottom: 8pt; }
+  
+  section { 
+    margin-bottom: 15pt; 
+    page-break-inside: avoid;
+  }
+  
+  .section-divider {
+    height: 1pt;
+    background-color: #D1D5DB;
+    margin: 8pt 0 12pt 0;
+  }
+  
+  p { margin: 6pt 0; font-size: 10pt; line-height: 1.4; color: #374151; }
+  ul { padding-left: 20pt; margin: 8pt 0; }
+  ul li { margin-bottom: 6pt; font-size: 10pt; line-height: 1.4; color: #374151; }
 
   /* ======== HEADER ======== */
   header {
-    text-align: center;
-    padding: 50px 20px;
-    background: #1e1e1e;
-    border-bottom: 2px solid #00bcd4;
+    display: flex;
+    align-items: center;
+    padding: 20pt 0;
+    margin-bottom: 20pt;
   }
   header img {
-    width: 130px;
-    height: 130px;
+    width: 80pt;
+    height: 80pt;
     border-radius: 50%;
-    border: 4px solid #00bcd4;
-    margin-bottom: 15px;
+    margin-right: 20pt;
+    flex-shrink: 0;
   }
-  header h1 { font-size: 2.5rem; margin: 10px 0; }
-  header p { margin: 6px 0; font-size: 1rem; color: #b2dfdb; }
-  .social-links a { margin: 0 10px; font-weight: bold; }
-
-  /* ======== SOBRE ======== */
-  .sobre p { font-size: 1rem; color: #ccc; }
+  .header-info {
+    flex: 1;
+  }
+  header h1 { 
+    font-size: 28pt; 
+    margin: 0 0 8pt 0; 
+    font-weight: bold; 
+    color: #000;
+  }
+  header .subtitle { 
+    font-size: 11pt; 
+    color: #6B7280; 
+    margin: 4pt 0; 
+  }
+  header .contact { 
+    font-size: 11pt; 
+    color: #6B7280; 
+    margin: 4pt 0; 
+  }
+  .social-links { 
+    margin-top: 8pt; 
+    font-size: 11pt; 
+  }
+  .social-links a { 
+    color: #1C64F2; 
+    text-decoration: none; 
+    margin-right: 15pt; 
+  }
 
   /* ======== SKILLS ======== */
-  .skills-group { margin-bottom: 30px; }
+  .skills-group { margin-bottom: 15pt; }
   .skill {
-    display:flex; align-items:center; margin:16px 0; font-size:1.05rem; font-weight:500;
+    display: flex; 
+    align-items: center; 
+    margin: 8pt 0; 
+    font-size: 10pt;
   }
-  .skill-icon { font-size:1.6rem; margin-right:12px; width:32px; text-align:center; }
-  .skill-name { flex:1; }
+  .skill-name { 
+    flex: 1; 
+    font-weight: 500; 
+    color: #374151;
+  }
   .skill-bar {
-    flex:2; height:16px; border-radius:8px; background:#333; overflow:hidden; margin-left:15px; position:relative;
+    flex: 2; 
+    height: 11pt; 
+    background-color: #E5E7EB; 
+    margin-left: 15pt; 
+    position: relative;
+    border-radius: 2pt;
   }
   .skill-bar span {
-    display:block; height:100%; border-radius:8px; width:0;
-    background: linear-gradient(90deg,#00bcd4,#2196f3);
-    transition: width 1.5s ease-in-out;
+    display: block; 
+    height: 100%; 
+    background-color: #1C64F2;
+    border-radius: 2pt;
   }
-  .skill-percent { margin-left:12px; font-size:0.95rem; font-weight:600; color:#b2dfdb; min-width:40px; text-align:right; }
-
-  /* Cores específicas */
-  .tech span[data-width="70%"],
-  .tech span[data-width="60%"],
-  .db span[data-width="65%"],
-  .school span[data-width="70%"],
-  .school span[data-width="60%"] { background: linear-gradient(90deg,#ffe082,#ffc107); }
-  .school span[data-width="75%"],
-  .school span[data-width="80%"],
-  .school span[data-width="90%"],
-  .school span[data-width="85%"] { background: linear-gradient(90deg,#43ea7d,#388e3c); }
-  .db span[data-width="80%"],
-  .db span[data-width="85%"] { background: linear-gradient(90deg,#ff9800,#ffc107); }
-
-  @media (max-width:600px){
-    .skill { flex-direction:column; align-items:flex-start; }
-    .skill-bar { margin-left:0; width:100%; margin-top:6px;}
-    .skill-percent { margin-left:0; margin-top:4px; width:100%; text-align:right;}
+  .skill-percent { 
+    margin-left: 10pt; 
+    font-size: 9pt; 
+    min-width: 30pt; 
+    text-align: right; 
+    font-weight: bold;
+    color: #6B7280;
   }
 
   /* ======== TAGS (SOCIOEMOCIONAIS) ======== */
   .tags span {
-    display:inline-block; background:#00bcd4; color:#121212; padding:5px 12px; margin:5px; border-radius:20px; font-size:0.9rem;
+    display: inline-block; 
+    background-color: #F3F4F6; 
+    border: 1pt solid #D1D5DB; 
+    padding: 3pt 6pt; 
+    margin: 2pt; 
+    font-size: 9pt;
+    font-weight: 500;
+    color: #374151;
+    border-radius: 2pt;
   }
 
-  /* ======== CARROSSEL CERTIFICADOS ======== */
-  .carousel { position: relative; max-width: 700px; margin: 20px auto; overflow: hidden; border-radius: 12px; }
-  .carousel img { width:100%; display:none; border-radius:10px;}
-  .carousel img.active { display:block; }
-  .carousel-btn {
-    position:absolute; top:50%; transform:translateY(-50%);
-    background: rgba(0,188,212,0.8); color:#121212; border:none; padding:10px; cursor:pointer; border-radius:50%;
+  /* ======== GALERIA DE CERTIFICADOS ======== */
+  .certificates-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10pt;
+    margin: 10pt 0;
   }
-  .carousel-btn:hover { background:#00bcd4; }
-  .prev { left:10px; } .next { right:10px; }
+  .certificates-gallery img {
+    width: 100%;
+    height: auto;
+    border: 1pt solid black;
+    page-break-inside: avoid;
+  }
 
-  /* ======== EXPERIÊNCIAS & IDIOMAS ======== */
-  ul { padding-left:20px; }
-  ul li { margin-bottom:10px; }
+  /* ======== QUEBRAS DE PÁGINA ======== */
+  .page-break { page-break-before: always; }
 
 </style>
 </head>
@@ -102,118 +168,159 @@
 
 <header>
   <img src="perfil.jpeg" alt="Foto de Henrique Kawê">
-  <h1>Henrique Kawê</h1>
-  <p>Desenvolvimento de Sistemas | Ensino Médio (em formação)</p>
-  <p>Email: kawehenri@gmail.com | Telefone: (61) 9 8627-9308 | Samambaia Norte - DF</p>
-  <div class="social-links">
-    <a href="https://github.com/kawehenri" target="_blank" rel="noopener">GitHub</a> | 
-    <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">LinkedIn</a> | 
-    <a href="KAWE HENRIQUE.pdf" download>Download de Currículo em PDF</a>
+  <div class="header-info">
+    <h1>Kawê Henrique</h1>
+    <p class="subtitle">Desenvolvimento de Sistemas | Ensino Médio (em formação)</p>
+    <p class="contact">kawehenri@gmail.com | (61) 9 8627-9308 | Samambaia Norte - DF</p>
+    <div class="social-links">
+      <a href="https://github.com/kawehenri" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
 </header>
 
 <section class="sobre">
-  <h2>Sobre Mim</h2>
-  <p>Sou estudante do curso Técnico em Desenvolvimento de Sistemas pelo SENAI, com experiência em projetos escolares de programação, banco de dados e automação. Tenho facilidade em trabalhar em equipe, sou comunicativo, organizado e busco constantemente aprender novas tecnologias e boas práticas de desenvolvimento. Meu objetivo é aplicar e expandir meus conhecimentos em ambientes profissionais, contribuindo de forma efetiva para projetos inovadores.</p>
+  <h2>SOBRE</h2>
+  <div class="section-divider"></div>
+   <p><strong>Objetivo:</strong> Atualmente estou trabalhando como estagiário em uma pequena empresa de desenvolvimento de sistemas e manutenção de sistemas. Meu objetivo é continuar aprendendo com o trabalho, após o término do Ensino Médio iniciar a minha graduação de nível superior em Engenharia de Software, para alavancar ainda mais a minha carreira na área de tecnologia.</p>
+   <p><strong>Resumo:</strong> Estudante do Ensino Médio no SESI Taguatinga e Estagiário da DF Informática, trilha técnica em Desenvolvimento de Sistemas pelo SENAI Taguatinga. Conhecimentos em lógica de programação, banco de dados (MySQL), back-end (Python, PHP, Laravel), e em front-end (HTML, CSS, JavaScript, React). Interesses em Engenharia de Software e Inteligência Artificial. Familiaridade com pacote Office (Word, Excel, PowerPoint).</p>
+   <p><strong>Perfil comportamental:</strong> empático e prestativo, colaboração em equipe, relações sociais positivas, responsabilidade com os estudos, resiliência, discrição e respeito ao próximo.</p>
 </section>
 
 <section>
-  <h2>Competências</h2>
-  <div class="skills-group">
-    <h3 style="color:#00bcd4; margin-bottom:10px;">Tecnologia & Programação</h3>
-    <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">HTML</span><div class="skill-bar tech"><span data-width="85%"></span></div><span class="skill-percent">85%</span></div>
-    <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">CSS</span><div class="skill-bar tech"><span data-width="80%"></span></div><span class="skill-percent">80%</span></div>
-    <div class="skill"><span class="skill-icon">💻</span><span class="skill-name">JavaScript</span><div class="skill-bar tech"><span data-width="70%"></span></div><span class="skill-percent">70%</span></div>
-    <div class="skill"><span class="skill-icon">🐍</span><span class="skill-name">Python</span><div class="skill-bar tech"><span data-width="60%"></span></div><span class="skill-percent">60%</span></div>
-    <div class="skill"><span class="skill-icon">🗄️</span><span class="skill-name">Banco de Dados (MySQL)</span><div class="skill-bar db"><span data-width="65%"></span></div><span class="skill-percent">65%</span></div>
-    <div class="skill"><span class="skill-icon">🖥️</span><span class="skill-name">Pacote Office</span><div class="skill-bar tech"><span data-width="80%"></span></div><span class="skill-percent">80%</span></div>
-  </div>
-  <div class="skills-group">
-    <h3 style="color:#43ea7d; margin-bottom:10px;">Matérias Escolares</h3>
-    <div class="skill"><span class="skill-icon">📐</span><span class="skill-name">Matemática</span><div class="skill-bar school"><span data-width="90%"></span></div><span class="skill-percent">90%</span></div>
-    <div class="skill"><span class="skill-icon">📊</span><span class="skill-name">Física</span><div class="skill-bar school"><span data-width="70%"></span></div><span class="skill-percent">75%</span></div>
-    <div class="skill"><span class="skill-icon">📝</span><span class="skill-name">Redação</span><div class="skill-bar school"><span data-width="85%"></span></div><span class="skill-percent">85%</span></div>
-    <div class="skill"><span class="skill-icon">🗣️</span><span class="skill-name">Língua Portuguesa</span><div class="skill-bar school"><span data-width="75%"></span></div><span class="skill-percent">80%</span></div>
-    <div class="skill"><span class="skill-icon">🌎</span><span class="skill-name">Inglês</span><div class="skill-bar school"><span data-width="60%"></span></div><span class="skill-percent">60%</span></div>
-  </div>
+  <h2>COMPETÊNCIAS TÉCNICAS</h2>
+  <div class="section-divider"></div>
+  
+  <div class="skill"><span class="skill-name">Lógica de Programação</span><div class="skill-bar"><span style="width: 80%"></span></div><span class="skill-percent">80%</span></div>
+  <div class="skill"><span class="skill-name">Banco de Dados (MySQL)</span><div class="skill-bar"><span style="width: 70%"></span></div><span class="skill-percent">70%</span></div>
+   <div class="skill"><span class="skill-name">Back-end (noções)</span><div class="skill-bar"><span style="width: 75%"></span></div><span class="skill-percent">75%</span></div>
+   <div class="skill"><span class="skill-name">Front-end (em aprendizado)</span><div class="skill-bar"><span style="width: 85%"></span></div><span class="skill-percent">85%</span></div>
+  <div class="skill"><span class="skill-name">Python</span><div class="skill-bar"><span style="width: 60%"></span></div><span class="skill-percent">60%</span></div>
+  <div class="skill"><span class="skill-name">PHP</span><div class="skill-bar"><span style="width: 60%"></span></div><span class="skill-percent">60%</span></div>
+  <div class="skill"><span class="skill-name">Laravel</span><div class="skill-bar"><span style="width: 55%"></span></div><span class="skill-percent">55%</span></div>
+   <div class="skill"><span class="skill-name">HTML/CSS e React</span><div class="skill-bar"><span style="width: 85%"></span></div><span class="skill-percent">85%</span></div>
+  <div class="skill"><span class="skill-name">JavaScript</span><div class="skill-bar"><span style="width: 70%"></span></div><span class="skill-percent">70%</span></div>
+  <div class="skill"><span class="skill-name">Pacote Office</span><div class="skill-bar"><span style="width: 80%"></span></div><span class="skill-percent">80%</span></div>
 </section>
 
 <section>
-  <h2>Competências Socioemocionais</h2>
-  <div class="tags">
-    <span>Empatia</span>
-    <span>Comunicação</span>
-    <span>Resiliência</span>
-    <span>Colaboração</span>
-    <span>Organização</span>
-    <span>Responsabilidade</span>
-    <span>Proatividade</span>
-    <span>Autonomia</span>
-    <span>Flexibilidade</span>
-    <span>Adaptabilidade</span>
-    <span>Iniciativa</span>
-    <span>Autoconfiança</span>
-    <span>Respeito e Ética</span>
-  </div>
+  <h2>COMPETÊNCIAS ESCOLARES</h2>
+  <div class="section-divider"></div>
+  
+  <div class="skill"><span class="skill-name">Linguagens</span><div class="skill-bar"><span style="width: 90%"></span></div><span class="skill-percent">90%</span></div>
+  <div class="skill"><span class="skill-name">Matemática</span><div class="skill-bar"><span style="width: 85%"></span></div><span class="skill-percent">85%</span></div>
+  <div class="skill"><span class="skill-name">Redação</span><div class="skill-bar"><span style="width: 95%"></span></div><span class="skill-percent">95%</span></div>
+  <div class="skill"><span class="skill-name">Ciências Humanas</span><div class="skill-bar"><span style="width: 80%"></span></div><span class="skill-percent">80%</span></div>
+  <div class="skill"><span class="skill-name">Ciências da Natureza</span><div class="skill-bar"><span style="width: 75%"></span></div><span class="skill-percent">75%</span></div>
 </section>
 
 <section>
-  <h2>Experiências & Projetos</h2>
+  <h2>FORMAÇÃO ACADÊMICA</h2>
+  <div class="section-divider"></div>
+  
+  <h3>Ensino Médio — SESI Taguatinga</h3>
+  <p>Estudante do Ensino Médio com trilha técnica em Desenvolvimento de Sistemas</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024–2025 — Taguatinga/DF</p>
+  
+  <h3>Ensino Médio — Colégio Selectus</h3>
+  <p>Primeiro ano do Ensino Médio</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2023 — Águas Lindas de Goiás/GO</p>
+  
+  <h3>Ensino Fundamental — Colégio Selectus</h3>
+  <p>Ensino Fundamental completo</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2014–2022 — Águas Lindas de Goiás/GO</p>
+  
+  <h3>Técnico em Desenvolvimento de Sistemas — SENAI Taguatinga</h3>
+  <p>Curso técnico com foco em programação, banco de dados, desenvolvimento web e mobile</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024–2025 — Taguatinga/DF</p>
+</section>
+
+<section>
+  <h2>EXPERIÊNCIAS</h2>
+  <div class="section-divider"></div>
+  
+  <h3>Projetos Escolares e Pessoais — Desenvolvimento de Sistemas</h3>
   <ul>
-    <li><strong>Sistema de Irrigação Automatizado</strong> — Projeto automatizado com diversas partes como elétrica, que funciona com o arduíno e o aplicativo que controla a irrigação, usado para  facilitar a vida do cliente que precisa disso a distância.</li>
-    <li><strong>Organização de Eventos Escolares</strong> — Suporte técnico e liderança em disciplinas gerais.</li>
-    <li><strong>Projetos</strong> — Sistemas em Python, HTML, CSS, JS e MySQL, todos disponíveis no GitHub.</li>
+    <li>• Atividades do SENAI — Exercícios de lógica, banco de dados, noções de back-end; protótipos front-end.</li>
   </ul>
+  
+  <ul>
+    <li>• Repositórios no GitHub — Estudos e experimentos.</li>
+  </ul>
+  <p style="font-size: 9pt; color: #1C64F2; margin: 4pt 0;">Ver perfil</p>
+  <p style="font-size: 8pt; color: #6B7280; margin: 2pt 0;">https://github.com/kawehenri</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">Contínuo</p>
+  
+  <ul>
+    <li>• Sistema de Irrigação Automatizado — Projeto interdisciplinar que integra programação, eletrônica e desenvolvimento web. Desenvolvido com Arduino para controle de irrigação, aplicativo mobile para monitoramento remoto e Landing Page responsiva. Tecnologias utilizadas: Arduino, Python, MySQL, HTML, CSS, JavaScript, React Native.</li>
+  </ul>
+  <p style="font-size: 9pt; color: #1C64F2; margin: 4pt 0;">Ver projeto no GitHub</p>
+  <p style="font-size: 8pt; color: #6B7280; margin: 2pt 0;">https://github.com/kawehenri</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 — Projeto pessoal / Escola</p>
+  
+  <ul>
+    <li>• Organização de Eventos Escolares — Suporte técnico e liderança em disciplinas gerais. Sempre fui reconhecido como bom aluno, respeitoso, amigável e com boas notas em todas as disciplinas.</li>
+  </ul>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">Voluntariado / Escola</p>
+  
+  <ul>
+    <li>• Projetos Diversos — Desenvolvimento de aplicações web e desktop utilizando Python, PHP, Laravel, HTML, CSS, JavaScript, React e MySQL. Inclui sistemas de gerenciamento, APIs REST e interfaces responsivas.</li>
+  </ul>
+  <p style="font-size: 9pt; color: #1C64F2; margin: 4pt 0;">Ver repositórios no GitHub</p>
+  <p style="font-size: 8pt; color: #6B7280; margin: 2pt 0;">https://github.com/kawehenri</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">Contínuo</p>
+
+  <h3>Estagiário — DF Informática</h3>
+  <ul>
+    <li>• Desenvolvimento de sistemas web utilizando PHP, Laravel, HTML, CSS e JavaScript</li>
+    <li>• Manutenção e correção de bugs em sistemas existentes</li>
+    <li>• Trabalho com banco de dados MySQL para consultas e manipulação de dados</li>
+    <li>• Participação em reuniões de planejamento e desenvolvimento de projetos</li>
+    <li>• Aplicação de boas práticas de programação e versionamento com Git</li>
+  </ul>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2025–Presente — Brasília/DF</p>
 </section>
 
 <section>
-  <h2>Certificados</h2>
-  <div class="carousel">
-    <img src="certificado.jpeg" alt="Certificado de Lógica de Programação" class="active">
+  <h2>CERTIFICADOS</h2>
+  <div class="section-divider"></div>
+  <div class="certificates-gallery">
+    <img src="certificado.jpeg" alt="Certificado de Lógica de Programação">
     <img src="certificado1.jpeg" alt="Certificado de Git e GitHub">
     <img src="certificado2.jpeg" alt="Certificado de Pacote Office">
     <img src="certificado3.jpeg" alt="Certificado de Python">
     <img src="certificado4.png" alt="Certificado de Java">
-    <button class="carousel-btn prev">&#10094;</button>
-    <button class="carousel-btn next">&#10095;</button>
   </div>
 </section>
 
 <section>
-  <h2>Idiomas</h2>
-  <p>Português — Nativo</p>
-  <p>Inglês — Básico</p>
+  <h2>COMPETÊNCIAS COMPLEMENTARES</h2>
+  <div class="section-divider"></div>
+  
+  <h3>Ferramentas e Tecnologias</h3>
+  <ul>
+    <li>• Git e GitHub — Controle de versão e colaboração em projetos</li>
+    <li>• Arduino — Desenvolvimento de projetos de automação e IoT</li>
+    <li>• APIs REST — Desenvolvimento e integração de serviços web</li>
+    <li>• Metodologias Ágeis — Conhecimento básico em Scrum e Kanban</li>
+  </ul>
+  
+  <h3>Soft Skills</h3>
+  <ul>
+    <li>• Trabalho em equipe e colaboração</li>
+    <li>• Comunicação eficaz e proatividade</li>
+    <li>• Resolução de problemas e pensamento analítico</li>
+    <li>• Adaptabilidade e aprendizado contínuo</li>
+  </ul>
 </section>
 
 <section>
-  <h2>Contato</h2>
-  <p>Estou em busca de oportunidades de estágio e desenvolvimento na área de tecnologia e também em áreas gerais dentro do mercado de trabalho. Entre em contato comigo por email, LinkedIn ou WhatsApp, será um prazer conversar!</p>
+  <h2>IDIOMAS</h2>
+  <div class="section-divider"></div>
+  <p>Português — Nativo</p>
+  <p>Inglês — Básico (leitura técnica e comunicação básica)</p>
 </section>
 
-<script>
-  // Animação das barras
-  window.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.skill-bar span').forEach(bar => {
-      setTimeout(() => { bar.style.width = bar.getAttribute('data-width'); }, 400);
-    });
-  });
-
-  // Carrossel
-  const images = document.querySelectorAll(".carousel img");
-  let index = 0;
-  function showImage(i){
-    images.forEach(img => img.classList.remove("active"));
-    images[i].classList.add("active");
-  }
-  document.querySelector(".prev").addEventListener("click", () => {
-    index = (index - 1 + images.length) % images.length;
-    showImage(index);
-  });
-  document.querySelector(".next").addEventListener("click", () => {
-    index = (index + 1) % images.length;
-    showImage(index);
-  });
-</script>
 
 </body>
 </html>
