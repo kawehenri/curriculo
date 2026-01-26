@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume - Kawê Henrique</title>
+<style>
+  /* ======== GLOBAL ======== */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #374151;
+    line-height: 1.4;
+    font-size: 10pt;
+  }
+  
+  /* ======== LAYOUT PARA IMPRESSÃO ======== */
+  @page {
+    size: A4;
+    margin: 2cm;
+    @top-left { content: ""; }
+    @top-right { content: ""; }
+    @bottom-left { content: ""; }
+    @bottom-right { content: ""; }
+  }
+  
+  h1, h2, h3 { margin: 0; }
+  h1 { font-size: 18pt; font-weight: bold; }
+  h2 { 
+    font-size: 14pt; 
+    font-weight: bold; 
+    margin-top: 20pt; 
+    margin-bottom: 8pt; 
+    color: #111827;
+    text-transform: uppercase;
+  }
+  h3 { font-size: 12pt; font-weight: bold; margin-top: 15pt; margin-bottom: 8pt; }
+  
+  section { 
+    margin-bottom: 15pt; 
+    page-break-inside: avoid;
+  }
+  
+  .section-divider {
+    height: 1pt;
+    background-color: #D1D5DB;
+    margin: 8pt 0 12pt 0;
+  }
+  
+  p { margin: 6pt 0; font-size: 10pt; line-height: 1.4; color: #374151; }
+  ul { padding-left: 20pt; margin: 8pt 0; }
+  ul li { margin-bottom: 6pt; font-size: 10pt; line-height: 1.4; color: #374151; }
+
+  /* ======== HEADER ======== */
+  header {
+    display: flex;
+    align-items: center;
+    padding: 20pt 0;
+    margin-bottom: 20pt;
+  }
+  header img {
+    width: 80pt;
+    height: 80pt;
+    border-radius: 50%;
+    margin-right: 20pt;
+    flex-shrink: 0;
+  }
+  .header-info {
+    flex: 1;
+  }
+  header h1 { 
+    font-size: 28pt; 
+    margin: 0 0 8pt 0; 
+    font-weight: bold; 
+    color: #000;
+  }
+  header .subtitle { 
+    font-size: 11pt; 
+    color: #6B7280; 
+    margin: 4pt 0; 
+  }
+  header .contact { 
+    font-size: 11pt; 
+    color: #6B7280; 
+    margin: 4pt 0; 
+  }
+  .social-links { 
+    margin-top: 8pt; 
+    font-size: 11pt; 
+  }
+  .social-links a { 
+    color: #1C64F2; 
+    text-decoration: none; 
+    margin-right: 15pt; 
+  }
+
+  /* ======== SKILLS ======== */
+  .skills-group { margin-bottom: 15pt; }
+
+  /* ======== TAGS (SOCIOEMOCIONAIS) ======== */
+  .tags span {
+    display: inline-block; 
+    background-color: #F3F4F6; 
+    border: 1pt solid #D1D5DB; 
+    padding: 3pt 6pt; 
+    margin: 2pt; 
+    font-size: 9pt;
+    font-weight: 500;
+    color: #374151;
+    border-radius: 2pt;
+  }
+
+  /* ======== GALERIA DE CERTIFICADOS ======== */
+  .certificates-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10pt;
+    margin: 10pt 0;
+  }
+  .certificates-gallery img {
+    width: 100%;
+    height: auto;
+    border: 1pt solid black;
+    page-break-inside: avoid;
+  }
+
+  /* ======== QUEBRAS DE PÁGINA ======== */
+  .page-break { page-break-before: always; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <img src="../imgs/perfil.jpeg" alt="Kawê Henrique Photo">
+  <div class="header-info">
+    <h1>Kawê Henrique</h1>
+    <p class="subtitle">Software Development | Software Engineering</p>
+    <p class="contact">📧 kawehenri@gmail.com<br>📞 +55 61 98627-9308<br>📍 Brasília - DF, Brazil</p>
+    <div class="social-links">
+      <a href="https://github.com/kawehenri" target="_blank" rel="noopener">🔗 GitHub</a>
+      <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section class="sobre">
+  <h2>PROFESSIONAL SUMMARY</h2>
+  <div class="section-divider"></div>
+   <p><strong>Objective</strong></p>
+   <p>To work in the information technology field, focusing on software development and system maintenance, applying my technical and academic knowledge. Seeking professional growth through continuous learning, combining practice, innovation, and solid Software Engineering education.</p>
+   <p><strong>Summary</strong></p>
+   <p>Software Engineering student at Catholic University of Brasília, with technical training in Systems Development from SENAI-DF and high school completed at SESI-SENAI DF. Currently working as an intern at DF Informática, with experience in development, maintenance, and system support. Proficient in programming logic, databases (MySQL), back-end development (Python, PHP, Laravel), and front-end development (HTML, CSS, JavaScript, React). Interested in Software Engineering, Artificial Intelligence, and curious about Cybersecurity, with focus on best practices and information security. Familiar with Microsoft Office Suite (Word, Excel, PowerPoint). Continuously improving technical skills and English language proficiency.</p>
+   <p><strong>Behavioral Profile</strong></p>
+   <p>Empathetic, responsible, and collaborative, with strong communication skills, ease for teamwork, organization, resilience, and ethical conduct. Committed to results, continuous learning, and professional growth.</p>
+</section>
+
+<section>
+  <h2>TECHNICAL SKILLS</h2>
+  <div class="section-divider"></div>
+  
+  <ul>
+    <li>• Programming Logic</li>
+    <li>• Databases: MySQL</li>
+    <li>• Back-end: Python, PHP, Laravel</li>
+    <li>• Front-end: HTML, CSS, JavaScript, React</li>
+    <li>• Version Control: Git and GitHub</li>
+    <li>• REST API Development</li>
+    <li>• Agile Methodologies: Scrum and Kanban (basic concepts)</li>
+    <li>• Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>EDUCATION</h2>
+  <div class="section-divider"></div>
+  
+  <h3>Software Engineering — Catholic University of Brasília</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2025 – Present | Brasília, DF, Brazil</p>
+  
+  <h3>Technical Degree in Systems Development — SENAI Taguatinga</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga, DF, Brazil</p>
+  
+  <h3>High School — SESI-SENAI DF</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga, DF, Brazil</p>
+</section>
+
+<section>
+  <h2>EXPERIENCE</h2>
+  <div class="section-divider"></div>
+  
+  <h3>Software Development Intern — DF Informática</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">2025 – Present | Brasília, DF, Brazil</p>
+  <ul>
+    <li>• Developed web systems using PHP, Laravel, HTML, CSS, and JavaScript</li>
+    <li>• Maintained, debugged, and improved existing systems</li>
+    <li>• Performed MySQL database queries and data manipulation</li>
+    <li>• Participated in planning meetings and project follow-ups</li>
+    <li>• Applied programming best practices and version control with Git</li>
+  </ul>
+  
+  <h3>Academic and Personal Projects — Software Development</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">Ongoing</p>
+  <ul>
+    <li>• Developed web and desktop applications using Python, PHP, Laravel, HTML, CSS, JavaScript, React, and MySQL</li>
+    <li>• Created management systems, REST APIs, and responsive interfaces</li>
+    <li>• Repositories available on GitHub</li>
+  </ul>
+  
+  <p style="font-size: 10pt; font-weight: 600; margin: 12pt 0 4pt 0;"><strong>Featured Project: Automated Irrigation System — 2025</strong></p>
+  <ul>
+    <li>• Interdisciplinary project integrating programming, electronics, and web development</li>
+    <li>• Arduino-based irrigation control, mobile app for remote monitoring, and responsive landing page</li>
+    <li>• Technologies: Arduino, Python, MySQL, HTML, CSS, JavaScript, React Native</li>
+  </ul>
+</section>
+
+<section>
+  <h2>CERTIFICATIONS</h2>
+  <div class="section-divider"></div>
+  <div class="certificates-gallery">
+    <img src="../imgs/certificado.jpeg" alt="Programming Logic Certificate">
+    <img src="../imgs/certificado1.jpeg" alt="Git and GitHub Certificate">
+    <img src="../imgs/certificado2.jpeg" alt="Microsoft Office Certificate">
+    <img src="../imgs/certificado3.jpeg" alt="Python Certificate">
+    <img src="../imgs/certificado4.png" alt="Java Certificate">
+    <img src="../imgs/certificado_bancodedados.jpg" alt="Database Certificate">
+  </div>
+</section>
+
+<section>
+  <h2>ADDITIONAL COMPETENCIES</h2>
+  <div class="section-divider"></div>
+  
+  <h3>Tools and Technologies</h3>
+  <ul>
+    <li>• Git and GitHub</li>
+    <li>• Arduino and automation projects (IoT)</li>
+    <li>• REST APIs</li>
+  </ul>
+  
+  <h3>Soft Skills</h3>
+  <ul>
+    <li>• Teamwork</li>
+    <li>• Clear communication and proactivity</li>
+    <li>• Problem-solving</li>
+    <li>• Analytical thinking</li>
+    <li>• Adaptability and continuous learning</li>
+  </ul>
+</section>
+
+<section>
+  <h2>LANGUAGES</h2>
+  <div class="section-divider"></div>
+  <ul>
+    <li>• Portuguese — Native</li>
+    <li>• English — Basic (technical reading, basic communication, and basic pronunciation)</li>
+  </ul>
+</section>
+
+
+</body>
+</html>
