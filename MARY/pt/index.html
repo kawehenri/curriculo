@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo – Maryana Cardoso da Silva</title>
+<style>
+
+  /* ======== RESET & GLOBAL ======== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #2d3748;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  /* ======== PÁGINA / IMPRESSÃO ======== */
+  @page {
+    size: A4;
+    margin: 1.8cm 2cm;
+  }
+
+  .page {
+    max-width: 794px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ======== TIPOGRAFIA ======== */
+  h1 {
+    font-size: 26pt;
+    font-weight: 700;
+    color: #1a202c;
+    letter-spacing: -0.5pt;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #9b6b8a;
+    text-transform: uppercase;
+    letter-spacing: 1.8pt;
+    margin-bottom: 6pt;
+  }
+
+  h3 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 2pt;
+  }
+
+  p {
+    font-size: 10pt;
+    color: #4a5568;
+    line-height: 1.55;
+    margin-bottom: 4pt;
+  }
+
+  ul {
+    padding-left: 16pt;
+    margin: 4pt 0;
+  }
+
+  ul li {
+    font-size: 10pt;
+    color: #4a5568;
+    line-height: 1.55;
+    margin-bottom: 3pt;
+  }
+
+  /* ======== DIVISOR DE SEÇÃO ======== */
+  .divider {
+    height: 1.5pt;
+    background: linear-gradient(to right, #9b6b8a, #e8d5e4);
+    margin: 5pt 0 10pt 0;
+    border: none;
+  }
+
+  /* ======== CABEÇALHO ======== */
+  header {
+    display: flex;
+    align-items: center;
+    gap: 20pt;
+    padding: 22pt 0 18pt 0;
+    border-bottom: 2pt solid #f0e8ee;
+    margin-bottom: 18pt;
+  }
+
+  .profile-photo {
+    width: 82pt;
+    height: 82pt;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2.5pt solid #e8d5e4;
+  }
+
+  .header-info {
+    flex: 1;
+  }
+
+  .header-subtitle {
+    font-size: 11pt;
+    color: #9b6b8a;
+    font-weight: 600;
+    margin: 4pt 0 8pt 0;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10pt;
+    margin-top: 6pt;
+  }
+
+  .contact-item {
+    font-size: 9.5pt;
+    color: #718096;
+    display: flex;
+    align-items: center;
+    gap: 3pt;
+  }
+
+  .contact-item .icon {
+    color: #9b6b8a;
+    font-style: normal;
+  }
+
+  /* ======== SEÇÕES ======== */
+  section {
+    margin-bottom: 14pt;
+    page-break-inside: avoid;
+  }
+
+  /* ======== LINHA DE CARGO + PERÍODO ======== */
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4pt;
+  }
+
+  .entry-meta {
+    font-size: 9pt;
+    color: #a0aec0;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  .entry-company {
+    font-size: 9.5pt;
+    color: #9b6b8a;
+    font-weight: 600;
+    margin-bottom: 5pt;
+    margin-top: 1pt;
+  }
+
+  /* ======== DESTAQUE ESPORTIVO ======== */
+  .sport-section {
+    background-color: #fdf8fc;
+    border-left: 3pt solid #9b6b8a;
+    padding: 10pt 12pt;
+    border-radius: 0 4pt 4pt 0;
+    margin-top: 4pt;
+  }
+
+  /* ======== COMPETÊNCIAS ======== */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2pt 20pt;
+    margin-top: 4pt;
+  }
+
+  .skills-grid li {
+    font-size: 10pt;
+    color: #4a5568;
+  }
+
+  /* ======== TAGS ======== */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5pt;
+    margin-top: 6pt;
+  }
+
+  .tag {
+    background-color: #f7f0f5;
+    border: 1pt solid #e2c9db;
+    color: #7b4f6e;
+    font-size: 9pt;
+    font-weight: 500;
+    padding: 3pt 8pt;
+    border-radius: 2pt;
+  }
+
+  /* ======== IDIOMAS ======== */
+  .language-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8pt;
+    margin-bottom: 6pt;
+  }
+
+  .language-name {
+    font-weight: 700;
+    font-size: 10pt;
+    color: #1a202c;
+    min-width: 80pt;
+  }
+
+  .language-level {
+    font-size: 10pt;
+    color: #4a5568;
+  }
+
+  .language-note {
+    font-size: 9pt;
+    color: #718096;
+    font-style: italic;
+    margin-top: 2pt;
+    margin-left: 88pt;
+  }
+
+  /* ======== INTERESSES ======== */
+  .interests-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5pt;
+    margin-top: 6pt;
+  }
+
+  /* ======== QUEBRA DE PÁGINA ======== */
+  .page-break { page-break-before: always; }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header>
+    <img src="../../imgs/MARY.jpg" alt="Foto de Maryana Cardoso" class="profile-photo">
+    <div class="header-info">
+      <h1>Maryana Cardoso da Silva</h1>
+      <p class="header-subtitle">Biomedicina · Ciências da Saúde</p>
+      <div class="contact-row">
+        <span class="contact-item"><i class="icon">✉</i> maryzocardoso07@gmail.com</span>
+        <span class="contact-item"><i class="icon">📞</i> (61) 98546-0528</span>
+        <span class="contact-item"><i class="icon">📍</i> Brasília – DF – Brasil</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== RESUMO PROFISSIONAL ===== -->
+  <section>
+    <h2>Resumo Profissional</h2>
+    <hr class="divider">
+    <p>
+      Candidata com perfil analítico e vocação para a área biomédica, combinando sólida formação acadêmica com experiência prática em ambiente administrativo e histórico de alto rendimento esportivo. Demonstra excelente organização, disciplina e responsabilidade, habilidades aprimoradas ao longo de 10 anos de ginástica rítmica de nível competitivo. Possui inglês avançado, com imersão de 6 meses nos Estados Unidos, conferindo fluência comunicativa em contexto internacional. Orientada para resultados científicos e comprometida com a precisão e a ética profissional.
+    </p>
+  </section>
+
+  <!-- ===== OBJETIVO PROFISSIONAL ===== -->
+  <section>
+    <h2>Objetivo Profissional</h2>
+    <hr class="divider">
+    <p>
+      Ingressar na área de Biomedicina com foco no desenvolvimento de competências científicas e laboratoriais, contribuindo para investigações biomédicas e análises de alta precisão. A longo prazo, pretende atuar na área de perícia criminal, aplicando o rigor científico e o comprometimento ético como fundamentos de uma carreira orientada à justiça e à saúde pública.
+    </p>
+  </section>
+
+  <!-- ===== FORMAÇÃO ACADÊMICA ===== -->
+  <section>
+    <h2>Formação Acadêmica</h2>
+    <hr class="divider">
+
+    <div class="entry-header">
+      <h3>Ensino Médio com Especialização em Ciências da Natureza</h3>
+      <span class="entry-meta">2023 – 2025</span>
+    </div>
+    <p class="entry-company">SESI-SENAI – Taguatinga, DF</p>
+    <ul>
+      <li>Participação na <strong>Mostra de Ciências</strong>: desenvolvimento e apresentação de projetos científicos interdisciplinares, estimulando o pensamento crítico e a metodologia científica.</li>
+      <li>Participação em <strong>Mostras Literárias</strong>: apresentações acadêmicas com foco em produção textual, argumentação e comunicação oral.</li>
+      <li>Formação com ênfase em biologia, química e física, consolidando base científica essencial para a área biomédica.</li>
+    </ul>
+  </section>
+
+  <!-- ===== EXPERIÊNCIA PROFISSIONAL ===== -->
+  <section>
+    <h2>Experiência Profissional</h2>
+    <hr class="divider">
+
+    <div class="entry-header">
+      <h3>Auxiliar Administrativo</h3>
+      <span class="entry-meta">2025</span>
+    </div>
+    <p class="entry-company">Start Sports · Projeto Esportivo — SESI Taguatinga, DF</p>
+    <ul>
+      <li>Organização e gestão de contratos utilizando <strong>Microsoft Word</strong> e <strong>Microsoft Excel</strong>, garantindo controle eficiente da documentação.</li>
+      <li>Atendimento direto a pais e responsáveis, desenvolvendo comunicação clara, empática e profissional.</li>
+      <li>Controle e acompanhamento de pagamentos, assegurando regularidade financeira das atividades.</li>
+      <li>Gestão administrativa de atividades esportivas, coordenando agendamentos e registros operacionais.</li>
+      <li>Suporte logístico e organizacional em competições e eventos esportivos das modalidades <strong>Judô</strong>, <strong>Jiu-Jitsu</strong> e <strong>Ginástica</strong>.</li>
+      <li>Apoio na organização de eventos internos, contribuindo para o bom andamento das atividades institucionais.</li>
+    </ul>
+  </section>
+
+  <!-- ===== EXPERIÊNCIA ESPORTIVA ===== -->
+  <section>
+    <h2>Experiência Esportiva</h2>
+    <hr class="divider">
+
+    <div class="sport-section">
+      <div class="entry-header">
+        <h3>Atleta de Ginástica Rítmica — Alto Rendimento</h3>
+        <span class="entry-meta">10 anos (5 anos competitivos)</span>
+      </div>
+      <p class="entry-company">Escola Brasiliense de Ginástica Rítmica (EBGR)</p>
+      <ul>
+        <li>Treinamento de <strong>alto rendimento</strong> por 5 anos, com participação em competições regionais e nacionais dentro e fora de Brasília.</li>
+        <li>Locais de treinamento: <strong>Universidade Católica de Brasília</strong> e <strong>SESI Taguatinga</strong>.</li>
+        <li>Rotina de treinos: 4 horas diárias, 3 vezes por semana — desenvolvendo gestão de tempo e foco em alta performance.</li>
+        <li>Experiência esportiva de alto nível que consolidou habilidades diretamente aplicáveis ao mercado de trabalho:
+          <strong>disciplina</strong>, <strong>resiliência</strong>, <strong>trabalho em equipe</strong>, <strong>controle emocional</strong>, <strong>foco</strong> e <strong>comprometimento com metas</strong>.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== COMPETÊNCIAS TÉCNICAS ===== -->
+  <section>
+    <h2>Competências Técnicas</h2>
+    <hr class="divider">
+    <ul class="skills-grid">
+      <li>• Microsoft Word</li>
+      <li>• Atendimento ao público</li>
+      <li>• Microsoft Excel</li>
+      <li>• Apoio administrativo</li>
+      <li>• Organização de documentos</li>
+      <li>• Organização de eventos</li>
+    </ul>
+  </section>
+
+  <!-- ===== SOFT SKILLS ===== -->
+  <section>
+    <h2>Competências Comportamentais</h2>
+    <hr class="divider">
+    <div class="tags">
+      <span class="tag">Organização</span>
+      <span class="tag">Atenção a detalhes</span>
+      <span class="tag">Comunicação interpessoal</span>
+      <span class="tag">Trabalho em equipe</span>
+      <span class="tag">Disciplina</span>
+      <span class="tag">Responsabilidade</span>
+      <span class="tag">Gestão de tempo</span>
+      <span class="tag">Proatividade</span>
+      <span class="tag">Resiliência</span>
+      <span class="tag">Inteligência emocional</span>
+    </div>
+  </section>
+
+  <!-- ===== IDIOMAS ===== -->
+  <section>
+    <h2>Idiomas</h2>
+    <hr class="divider">
+    <div class="language-row">
+      <span class="language-name">Português</span>
+      <span class="language-level">Nativo</span>
+    </div>
+    <div class="language-row">
+      <span class="language-name">Inglês</span>
+      <span class="language-level">Intermediário</span>
+    </div>
+    <p class="language-note">Imersão de 6 meses nos Estados Unidos com curso de inglês, desenvolvendo fluência conversacional e habilidades de comunicação em ambiente internacional.
+      <strong>Básico</strong>
+    </p>
+  </section>
+
+  <!-- ===== INTERESSES ACADÊMICOS ===== -->
+  <section>
+    <h2>Interesses Acadêmicos</h2>
+    <hr class="divider">
+    <div class="interests-grid">
+      <span class="tag">Ciências Biomédicas</span>
+      <span class="tag">Investigação Científica</span>
+      <span class="tag">Análises Laboratoriais</span>
+      <span class="tag">Biologia e Saúde</span>
+      <span class="tag">Perícia Criminal</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

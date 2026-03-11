@@ -1,0 +1,15 @@
+{
+  "name": "gerador-pdf-curriculo",
+  "version": "1.0.0",
+  "description": "Script para gerar PDFs dos currículos",
+  "main": "gerar_pdf.js",
+  "scripts": {
+    "gerar": "node gerar_pdf.js"
+  },
+  "keywords": ["pdf", "curriculo"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}
