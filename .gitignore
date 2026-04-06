@@ -1,0 +1,8 @@
+# Instaladores e mídias pesadas — não versionar (limite GitHub ~100MB/arquivo; push quebra por timeout)
+*.exe
+*.msi
+*.mp4
+*.mov
+
+# PDFs pessoais / fora do site (ajuste se quiser versionar)
+imgs/Gmail*.pdf
