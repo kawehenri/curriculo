@@ -4,7 +4,8 @@
   "description": "Script para gerar PDFs dos currículos",
   "main": "gerar_pdf.js",
   "scripts": {
-    "gerar": "node gerar_pdf.js"
+    "gerar": "node gerar_pdf.js",
+    "gerar:elma": "node gerar_pdf_elma.js"
   },
   "keywords": ["pdf", "curriculo"],
   "author": "",
