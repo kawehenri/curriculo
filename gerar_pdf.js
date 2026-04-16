@@ -25,6 +25,9 @@ async function gerarPDF(htmlPath, pdfPath) {
             waitUntil: 'networkidle0'
         });
 
+        // Usa CSS de impressão (@media print) — quebras de página e margens coerentes
+        await page.emulateMediaType('print');
+
         // Gera o PDF
         await page.pdf({
             path: pdfPath,

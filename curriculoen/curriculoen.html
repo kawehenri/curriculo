@@ -39,8 +39,7 @@
   h3 { font-size: 12pt; font-weight: bold; margin-top: 15pt; margin-bottom: 8pt; }
   
   section { 
-    margin-bottom: 15pt; 
-    page-break-inside: avoid;
+    margin-bottom: 12pt;
   }
   
   .section-divider {
@@ -129,6 +128,45 @@
   /* ======== QUEBRAS DE PÁGINA ======== */
   .page-break { page-break-before: always; }
 
+  @media print {
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    section {
+      page-break-inside: auto;
+      break-inside: auto;
+      margin-bottom: 10pt;
+    }
+    header {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin-bottom: 14pt;
+      padding-bottom: 12pt;
+    }
+    h2 {
+      margin-top: 14pt;
+      margin-bottom: 6pt;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    h3 {
+      page-break-after: avoid;
+      margin-top: 10pt;
+    }
+    ul {
+      page-break-inside: auto;
+    }
+    ul li {
+      orphans: 2;
+      widows: 2;
+    }
+    .certificates-gallery img {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -137,8 +175,8 @@
   <img src="../imgs/perfil.jpeg" alt="Kawê Henrique Photo">
   <div class="header-info">
     <h1>Kawê Henrique</h1>
-    <p class="subtitle">Software Development | Software Engineering</p>
-    <p class="contact">📧 kawehenri@gmail.com<br>📞 +55 61 98627-9308<br>📍 Brasília - DF - Brazil</p>
+    <p class="subtitle">Full-Stack Web Developer | Laravel · React · MySQL</p>
+    <p class="contact">📧 kawehenri@gmail.com<br>📞 +55 61 98627-9308<br>📍 Greater Brasília Area, DF / GO — Brazil</p>
     <div class="social-links">
       <a href="https://github.com/kawehenri" target="_blank" rel="noopener">🔗 GitHub</a>
       <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">🔗 LinkedIn</a>
@@ -150,12 +188,8 @@
 <section class="sobre">
   <h2>PROFESSIONAL SUMMARY</h2>
   <div class="section-divider"></div>
-   <p><strong>Objective</strong></p>
-   <p>To work in the information technology field, focusing on software development and system maintenance, applying my technical and academic knowledge. Seeking professional growth through continuous learning, combining practice, innovation, and solid Software Engineering education.</p>
-   <p><strong>Summary</strong></p>
-   <p>Software Engineering student at University of Distrito Federal (UDF), with technical training in Systems Development from SENAI-DF and high school completed at SESI-SENAI DF. Currently working as an intern at DF Informática, with experience in development, maintenance, and system support. Proficient in programming logic, databases (MySQL), back-end development (Python, PHP, Laravel), and front-end development (HTML, CSS, JavaScript, React). Interested in Software Engineering, Artificial Intelligence, and curious about Cybersecurity, with focus on best practices and information security. Familiar with Microsoft Office Suite (Word, Excel, PowerPoint). Continuously improving technical skills and English language proficiency.</p>
-   <p><strong>Behavioral Profile</strong></p>
-   <p>Empathetic, responsible, and collaborative, with strong communication skills, ease for teamwork, organization, resilience, and ethical conduct. Committed to results, continuous learning, and professional growth.</p>
+  <p><strong>Objective:</strong> Full-stack web development with emphasis on Laravel and React, combining direct user communication with software engineering best practices.</p>
+  <p>Software Engineering undergraduate at UDF — Centro Universitário do Distrito Federal, with a technical degree in Systems Development from SENAI-DF. Currently interning at DF Informática, where I develop and maintain web systems, handle direct client support, and gather requirements. Experienced in technical presentations to diverse audiences — including events such as Mundo SENAI, which drew interest from the agribusiness sector. Collaborative, empathetic, and committed to continuous learning.</p>
 </section>
 
 <section>
@@ -163,14 +197,15 @@
   <div class="section-divider"></div>
   
   <ul>
-    <li>• Programming Logic</li>
-    <li>• Databases: MySQL</li>
-    <li>• Back-end: Python, PHP, Laravel</li>
-    <li>• Front-end: HTML, CSS, JavaScript, React</li>
-    <li>• REST API development and integration</li>
-    <li>• Version Control: Git and GitHub</li>
-    <li>• UI/UX fundamentals applied to web interfaces (usability, visual hierarchy, and responsiveness)</li>
-    <li>• Requirements gathering with users (interviews and needs validation)</li>
+    <li>Programming Logic</li>
+    <li>Databases: MySQL</li>
+    <li>Back-end: Python, PHP, Laravel</li>
+    <li>Front-end: HTML, CSS, JavaScript, React</li>
+    <li>REST API development and integration</li>
+    <li>Version Control: Git and GitHub</li>
+    <li>UI/UX fundamentals applied to web interfaces (usability, visual hierarchy, and responsiveness)</li>
+    <li>Requirements gathering with users (interviews and needs validation)</li>
+    <li>Excel (spreadsheets, queries, and data management)</li>
   </ul>
 </section>
 
@@ -178,11 +213,11 @@
   <h2>EDUCATION</h2>
   <div class="section-divider"></div>
   
-  <h3>Software Engineering — University of Distrito Federal (UDF)</h3>
+  <h3>Software Engineering — UDF — Centro Universitário do Distrito Federal</h3>
   <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2025 – Present | Brasília, DF, Brazil</p>
   
   <h3>Technical Degree in Systems Development — SENAI Taguatinga</h3>
-  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga, DF, Brazil</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga, DF, Brazil (concurrent with high school)</p>
   
   <h3>High School — SESI-SENAI DF</h3>
   <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga, DF, Brazil</p>
@@ -195,35 +230,53 @@
   <h3>Software Development Intern — DF Informática</h3>
   <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">2025 – Present | Brasília, DF, Brazil</p>
   <ul>
-    <li>• Developed web systems using PHP, Laravel, HTML, CSS, and JavaScript</li>
-    <li>• Maintained, debugged, and improved existing systems</li>
-    <li>• Performed MySQL database queries and data manipulation</li>
-    <li>• Applied UI/UX principles to improve user flows and interface quality</li>
-    <li>• Gathered requirements with users and supported project scope and priority organization</li>
-    <li>• Participated in planning meetings and project follow-ups</li>
-    <li>• Applied programming best practices and version control with Git</li>
+    <li>Developed web systems using PHP, Laravel, HTML, CSS, and JavaScript</li>
+    <li>Maintained, debugged, and improved existing systems</li>
+    <li>Performed MySQL database queries and data manipulation</li>
+    <li>Applied UI/UX principles to improve user flows and interfaces</li>
+    <li>Provided direct client support for requirements gathering, active listening, and issue resolution</li>
+    <li>Participated in planning meetings and project follow-ups</li>
+    <li>Applied version control with Git and programming best practices</li>
+  </ul>
+
+  <h3>Administrative Assistant & Customer Service — Payroll Loan Company</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">2023 | Brasília, DF, Brazil</p>
+  <ul>
+    <li>Queried CPF records and verified eligibility in banking systems (supplementary withdrawal, FGTS, anniversary withdrawal)</li>
+    <li>Communicated with clients via standardized messages for prospecting and contract closure</li>
+    <li>Organized data and managed records using Excel spreadsheets</li>
   </ul>
   
   <h3>Academic and Personal Projects — Software Development</h3>
   <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">Ongoing</p>
   <ul>
-    <li>• Developed web and desktop applications using Python, PHP, Laravel, HTML, CSS, JavaScript, React, and MySQL</li>
-    <li>• Created management systems, REST APIs, and responsive interfaces following UI/UX best practices</li>
-    <li>• Conducted interviews to understand requirements and organize academic projects</li>
-    <li>• Repositories available on GitHub</li>
+    <li>Developed web and desktop applications using Python, PHP, Laravel, HTML, CSS, JavaScript, React, and MySQL</li>
+    <li>Created management systems, REST APIs, and responsive interfaces</li>
+    <li>Repositories available on GitHub</li>
   </ul>
   
   <p style="font-size: 10pt; font-weight: 600; margin: 12pt 0 4pt 0;"><strong>Featured Project: Automated Irrigation System — 2025</strong></p>
   <ul>
-    <li>• Interdisciplinary project integrating programming, electronics, and web development</li>
-    <li>• Arduino-based irrigation control, mobile app for remote monitoring, and responsive landing page</li>
-    <li>• Technologies: Arduino, Python, MySQL, HTML, CSS, JavaScript, React Native</li>
+    <li>Interdisciplinary project integrating programming, electronics (Arduino), mobile app (React Native), and responsive landing page</li>
+    <li>Responsible for the back-end, landing page development, and hydraulic assembly of the system</li>
+    <li>Showcased at Mundo SENAI (SENAI's flagship institutional event), at the SENAI IT event, and at the SESI Science Fair, attracting interest from agribusiness buyers</li>
+    <li>Led public presentations of the project at all events, communicating clearly to both technical and non-technical audiences</li>
+    <li>Technologies: Arduino, Python, MySQL, HTML, CSS, JavaScript, React Native</li>
+    <li>Project landing page (AquaFloww): <a href="https://aquafloww.site" target="_blank" rel="noopener">aquafloww.site</a></li>
   </ul>
 </section>
 
 <section>
   <h2>CERTIFICATIONS</h2>
   <div class="section-divider"></div>
+  <ul>
+    <li>Programming Logic</li>
+    <li>Git and GitHub</li>
+    <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+    <li>Python</li>
+    <li>Java</li>
+    <li>Databases</li>
+  </ul>
   <div class="certificates-gallery">
     <img src="../imgs/certificado.jpeg" alt="Programming Logic Certificate">
     <img src="../imgs/certificado1.jpeg" alt="Git and GitHub Certificate">
@@ -240,20 +293,25 @@
   
   <h3>Tools and Technologies</h3>
   <ul>
-    <li>• Git and GitHub</li>
-    <li>• Arduino and automation projects (IoT)</li>
-    <li>• Agile methodologies (Scrum and Kanban) for project organization</li>
-    <li>• Documentation and follow-up of tasks, scope, and priorities</li>
-    <li>• Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+    <li>Git and GitHub</li>
+    <li>Arduino and automation projects (IoT)</li>
+    <li>Agile methodologies (Scrum and Kanban)</li>
+    <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
   </ul>
   
   <h3>Soft Skills</h3>
   <ul>
-    <li>• Teamwork</li>
-    <li>• Clear communication and proactivity</li>
-    <li>• Problem-solving</li>
-    <li>• Analytical thinking</li>
-    <li>• Adaptability and continuous learning</li>
+    <li>Clear communication, technical presentations, and project leadership</li>
+    <li>Teamwork and collaboration</li>
+    <li>Problem-solving and analytical thinking</li>
+    <li>Adaptability and continuous learning</li>
+  </ul>
+
+  <h3>Extracurricular Activities</h3>
+  <ul>
+    <li>Catechist and youth group member — developed teaching skills, patience, and communication with children and teenagers</li>
+    <li>Peer mentoring at university — supporting classmates with programming and Git/GitHub</li>
+    <li>Regular practice of futsal, football, weight training, and judo — discipline, teamwork, and respect</li>
   </ul>
 </section>
 
@@ -261,8 +319,8 @@
   <h2>LANGUAGES</h2>
   <div class="section-divider"></div>
   <ul>
-    <li>• Portuguese — Native</li>
-    <li>• English — Basic level (technical reading, early professional communication, and developing pronunciation)</li>
+    <li>Portuguese — Native</li>
+    <li>English — Elementary / A2 (technical reading and developing professional communication)</li>
   </ul>
 </section>
 

@@ -39,8 +39,7 @@
   h3 { font-size: 12pt; font-weight: bold; margin-top: 15pt; margin-bottom: 8pt; }
   
   section { 
-    margin-bottom: 15pt; 
-    page-break-inside: avoid;
+    margin-bottom: 12pt;
   }
   
   .section-divider {
@@ -129,6 +128,46 @@
   /* ======== QUEBRAS DE PÁGINA ======== */
   .page-break { page-break-before: always; }
 
+  /* Impressão / PDF: evita buracos entre seções (não forçar seção inteira em uma página) */
+  @media print {
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    section {
+      page-break-inside: auto;
+      break-inside: auto;
+      margin-bottom: 10pt;
+    }
+    header {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin-bottom: 14pt;
+      padding-bottom: 12pt;
+    }
+    h2 {
+      margin-top: 14pt;
+      margin-bottom: 6pt;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    h3 {
+      page-break-after: avoid;
+      margin-top: 10pt;
+    }
+    ul {
+      page-break-inside: auto;
+    }
+    ul li {
+      orphans: 2;
+      widows: 2;
+    }
+    .certificates-gallery img {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -137,7 +176,7 @@
   <img src="../imgs/perfil.jpeg" alt="Foto de Henrique Kawê">
   <div class="header-info">
     <h1>Kawê Henrique</h1>
-    <p class="subtitle">Desenvolvimento de Sistemas | Engenharia de Software</p>
+    <p class="subtitle">Desenvolvedor Web Full-Stack | Laravel · React · MySQL</p>
     <p class="contact">📧 kawehenri@gmail.com<br>📞 (61) 9 8627-9308<br>📍 Samambaia Norte – DF / Águas Lindas de Goiás - GO</p>
     <div class="social-links">
       <a href="https://github.com/kawehenri" target="_blank" rel="noopener">🔗 GitHub</a>
@@ -150,12 +189,8 @@
 <section class="sobre">
   <h2>SOBRE</h2>
   <div class="section-divider"></div>
-   <p><strong>Objetivo</strong></p>
-   <p>Atuar na área de tecnologia da informação, com foco em desenvolvimento e manutenção de sistemas, aplicando meus conhecimentos técnicos e acadêmicos. Busco crescimento profissional por meio do aprendizado contínuo, aliando prática, inovação e sólida formação em Engenharia de Software.</p>
-   <p><strong>Resumo</strong></p>
-   <p>Estudante de Engenharia de Software pela UDF - Centro Universitário do Distrito Federal, com formação técnica em Desenvolvimento de Sistemas pelo SENAI-DF e ensino médio concluído pelo SESI-SENAI DF. Atuo como estagiário na DF Informática, com experiência em desenvolvimento, manutenção e suporte de sistemas. Possuo conhecimentos em lógica de programação, banco de dados (MySQL), desenvolvimento back-end (Python, PHP, Laravel) e front-end (HTML, CSS, JavaScript, React). Interesse em Engenharia de Software, Inteligência Artificial e curiosidade pela área de Cibersegurança, com foco em boas práticas e segurança da informação. Familiaridade com o pacote Office (Word, Excel e PowerPoint). Em constante aprimoramento técnico e no desenvolvimento da língua inglesa.</p>
-   <p><strong>Perfil comportamental</strong></p>
-   <p>Empático, responsável e colaborativo, com boa comunicação, facilidade para trabalho em equipe, organização, resiliência e postura ética. Comprometido com resultados, aprendizado contínuo e evolução profissional.</p>
+  <p><strong>Objetivo:</strong> Desenvolvimento web full-stack com ênfase em Laravel e React, aliando comunicação direta com usuários e boas práticas de engenharia de software.</p>
+  <p>Graduando em Engenharia de Software pela UDF, com formação técnica em Desenvolvimento de Sistemas pelo SENAI-DF. Estagiário na DF Informática, onde atuo no desenvolvimento e manutenção de sistemas web, atendimento direto a clientes e levantamento de requisitos. Experiência em apresentações técnicas para públicos diversos — incluindo eventos como o Mundo SENAI, com repercussão no setor agronômico. Perfil colaborativo, empático e comprometido com aprendizado contínuo.</p>
 </section>
 
 <section>
@@ -163,14 +198,15 @@
   <div class="section-divider"></div>
   
   <ul>
-    <li>• Lógica de Programação</li>
-    <li>• Banco de Dados: MySQL</li>
-    <li>• Back-end: Python, PHP, Laravel</li>
-    <li>• Front-end: HTML, CSS, JavaScript, React</li>
-    <li>• Desenvolvimento e consumo de APIs REST</li>
-    <li>• Versionamento de código: Git e GitHub</li>
-    <li>• Fundamentos de UI/UX aplicados a interfaces web (usabilidade, hierarquia visual e responsividade)</li>
-    <li>• Levantamento de requisitos com usuários (entrevistas e validação de necessidades)</li>
+    <li>Lógica de Programação</li>
+    <li>Banco de Dados: MySQL</li>
+    <li>Back-end: Python, PHP, Laravel</li>
+    <li>Front-end: HTML, CSS, JavaScript, React</li>
+    <li>Desenvolvimento e consumo de APIs REST</li>
+    <li>Versionamento de código: Git e GitHub</li>
+    <li>Fundamentos de UI/UX aplicados a interfaces web (usabilidade, hierarquia visual e responsividade)</li>
+    <li>Levantamento de requisitos com usuários (entrevistas e validação de necessidades)</li>
+    <li>Excel (planilhas, consultas e controle de dados)</li>
   </ul>
 </section>
 
@@ -182,7 +218,7 @@
   <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2025 – Em andamento | Brasília - DF</p>
   
   <h3>Técnico em Desenvolvimento de Sistemas — SENAI Taguatinga</h3>
-  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga - DF</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga - DF (concomitante ao ensino médio)</p>
   
   <h3>Ensino Médio — SESI-SENAI DF</h3>
   <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0;">2024 – 2025 | Taguatinga - DF</p>
@@ -193,37 +229,55 @@
   <div class="section-divider"></div>
   
   <h3>Estagiário em Desenvolvimento de Sistemas — DF Informática</h3>
-  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">2025 – Presente | Brasília/DF</p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">2025 – Presente | Brasília - DF</p>
   <ul>
-    <li>• Desenvolvimento de sistemas web utilizando PHP, Laravel, HTML, CSS e JavaScript</li>
-    <li>• Manutenção, correção de bugs e melhorias em sistemas existentes</li>
-    <li>• Manipulação e consultas em banco de dados MySQL</li>
-    <li>• Aplicação de princípios de UI/UX na melhoria de fluxos e interfaces com foco em experiência do usuário</li>
-    <li>• Levantamento de requisitos com usuários e apoio na organização de escopo e prioridades dos projetos</li>
-    <li>• Participação em reuniões de planejamento e acompanhamento de projetos</li>
-    <li>• Aplicação de boas práticas de programação e controle de versão com Git</li>
+    <li>Desenvolvimento de sistemas web com PHP, Laravel, HTML, CSS e JavaScript</li>
+    <li>Manutenção, correção de bugs e melhorias em sistemas existentes</li>
+    <li>Manipulação e consultas em banco de dados MySQL</li>
+    <li>Aplicação de princípios de UI/UX na melhoria de fluxos e interfaces</li>
+    <li>Atendimento direto a clientes para levantamento de requisitos, escuta ativa e resolução de demandas</li>
+    <li>Participação em reuniões de planejamento e acompanhamento de projetos</li>
+    <li>Controle de versão com Git e aplicação de boas práticas de programação</li>
+  </ul>
+
+  <h3>Auxiliar Administrativo e Atendimento — Pessoa Promotora</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">2023 | Águas Lindas de Goiás - GO</p>
+  <ul>
+    <li>Consulta de CPF e verificação de elegibilidade em sistema bancário (saque complementar, FGTS, saque-aniversário)</li>
+    <li>Comunicação com clientes via mensagens padronizadas para prospecção e fechamento de contratos</li>
+    <li>Organização de dados e controle de informações em planilhas Excel</li>
   </ul>
   
   <h3>Projetos Acadêmicos e Pessoais — Desenvolvimento de Sistemas</h3>
   <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 8pt 0;">Contínuo</p>
   <ul>
-    <li>• Desenvolvimento de aplicações web e desktop utilizando Python, PHP, Laravel, HTML, CSS, JavaScript, React e MySQL</li>
-    <li>• Criação de sistemas de gerenciamento, APIs REST e interfaces responsivas com boas práticas de UI/UX</li>
-    <li>• Entrevistas para entendimento de requisitos e organização de projetos acadêmicos</li>
-    <li>• Repositórios disponíveis no GitHub</li>
+    <li>Desenvolvimento de aplicações web e desktop com Python, PHP, Laravel, HTML, CSS, JavaScript, React e MySQL</li>
+    <li>Criação de sistemas de gerenciamento, APIs REST e interfaces responsivas</li>
+    <li>Repositórios disponíveis no GitHub</li>
   </ul>
   
   <p style="font-size: 10pt; font-weight: 600; margin: 12pt 0 4pt 0;"><strong>Projeto Destaque: Sistema de Irrigação Automatizado — 2025</strong></p>
   <ul>
-    <li>• Projeto interdisciplinar integrando programação, eletrônica e desenvolvimento web</li>
-    <li>• Controle de irrigação com Arduino, aplicativo mobile para monitoramento remoto e landing page responsiva</li>
-    <li>• Tecnologias: Arduino, Python, MySQL, HTML, CSS, JavaScript, React Native</li>
+    <li>Projeto interdisciplinar integrando programação, eletrônica (Arduino), aplicativo mobile (React Native) e landing page responsiva</li>
+    <li>Atuação no back-end, desenvolvimento da landing page e montagem da parte hidráulica do sistema</li>
+    <li>Apresentado no Mundo SENAI (maior evento institucional do SENAI), no evento de TI do SENAI e na Feira de Ciências do SESI, atraindo interesse de compradores do setor agronômico</li>
+    <li>Responsável pela apresentação pública do projeto em todos os eventos, com comunicação clara para públicos técnicos e não técnicos</li>
+    <li>Tecnologias: Arduino, Python, MySQL, HTML, CSS, JavaScript, React Native</li>
+    <li>Landing page do projeto (AquaFloww): <a href="https://aquafloww.site" target="_blank" rel="noopener">aquafloww.site</a></li>
   </ul>
 </section>
 
 <section>
   <h2>CERTIFICADOS</h2>
   <div class="section-divider"></div>
+  <ul>
+    <li>Lógica de Programação</li>
+    <li>Git e GitHub</li>
+    <li>Pacote Office (Word, Excel, PowerPoint)</li>
+    <li>Python</li>
+    <li>Java</li>
+    <li>Banco de Dados</li>
+  </ul>
   <div class="certificates-gallery">
     <img src="../imgs/certificado.jpeg" alt="Certificado de Lógica de Programação">
     <img src="../imgs/certificado1.jpeg" alt="Certificado de Git e GitHub">
@@ -240,20 +294,25 @@
   
   <h3>Ferramentas e Tecnologias</h3>
   <ul>
-    <li>• Git e GitHub</li>
-    <li>• Arduino e projetos de automação (IoT)</li>
-    <li>• Metodologias Ágeis (Scrum e Kanban) para organização de projetos</li>
-    <li>• Documentação e acompanhamento de tarefas, escopo e prioridades</li>
-    <li>• Pacote Office (Word, Excel, PowerPoint)</li>
+    <li>Git e GitHub</li>
+    <li>Arduino e projetos de automação (IoT)</li>
+    <li>Metodologias Ágeis (Scrum e Kanban)</li>
+    <li>Pacote Office (Word, Excel, PowerPoint)</li>
   </ul>
   
   <h3>Soft Skills</h3>
   <ul>
-    <li>• Trabalho em equipe</li>
-    <li>• Comunicação clara e proatividade</li>
-    <li>• Resolução de problemas</li>
-    <li>• Pensamento analítico</li>
-    <li>• Adaptabilidade e aprendizado contínuo</li>
+    <li>Comunicação clara, apresentações técnicas e liderança em projetos</li>
+    <li>Trabalho em equipe e colaboração</li>
+    <li>Resolução de problemas e pensamento analítico</li>
+    <li>Adaptabilidade e aprendizado contínuo</li>
+  </ul>
+
+  <h3>Atividades Complementares</h3>
+  <ul>
+    <li>Catequista e participante de grupo de jovens — desenvolvimento de didática, paciência e comunicação com crianças e adolescentes</li>
+    <li>Mentoria entre pares na faculdade — apoio a colegas com programação e Git/GitHub</li>
+    <li>Prática regular de futsal, futebol, musculação e judô — disciplina, trabalho em equipe e respeito</li>
   </ul>
 </section>
 
@@ -261,8 +320,8 @@
   <h2>IDIOMAS</h2>
   <div class="section-divider"></div>
   <ul>
-    <li>• Português — Nativo</li>
-    <li>• Inglês — Nível básico (leitura técnica, comunicação profissional inicial e pronúncia em desenvolvimento)</li>
+    <li>Português — Nativo</li>
+    <li>Inglês — Nível básico / A2 (leitura técnica e comunicação profissional em desenvolvimento)</li>
   </ul>
 </section>
 
