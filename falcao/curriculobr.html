@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo Esportivo — Rodrigo Falcão</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #1e3a5f;
+    --accent-soft: #e8eef5;
+    --accent-gold: #b8860b;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --campeao: #166534;
+    --campeao-bg: #dcfce7;
+    --vice: #1d4ed8;
+    --vice-bg: #dbeafe;
+    --podio: #b45309;
+    --podio-bg: #fef3c7;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: var(--text);
+    font-size: 10pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page { size: A4; margin: 1.6cm 2cm; }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none !important; }
+  }
+
+  .page {
+    max-width: 794px;
+    margin: 0 auto;
+    padding: 20pt 24pt 26pt;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .doc-title {
+    text-align: center;
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.2pt;
+    margin-bottom: 12pt;
+    padding-bottom: 8pt;
+    border-bottom: 2pt solid var(--accent);
+  }
+
+  .executive-summary {
+    background: var(--accent-soft);
+    border-left: 4pt solid var(--accent-gold);
+    padding: 10pt 12pt;
+    margin-bottom: 14pt;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  .executive-summary strong { color: var(--accent); }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16pt;
+    padding-bottom: 14pt;
+    margin-bottom: 12pt;
+    border-bottom: 1pt solid var(--border);
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10pt;
+    flex-shrink: 0;
+  }
+
+  .profile-photo {
+    width: 88pt;
+    height: 88pt;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3pt solid var(--accent-soft);
+    box-shadow: 0 2pt 8pt rgba(30, 58, 95, 0.15);
+  }
+
+  .instagram-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4pt;
+  }
+
+  .ig-icon {
+    width: 18pt;
+    height: 18pt;
+    display: block;
+  }
+
+  .qr-code {
+    width: 48pt;
+    height: 48pt;
+    display: block;
+  }
+
+  .instagram-block a {
+    font-size: 7.5pt;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .header-info { flex: 1; min-width: 0; }
+
+  header h1 {
+    font-size: 15pt;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.2;
+    margin-bottom: 5pt;
+  }
+
+  .header-subtitle {
+    font-size: 10pt;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 6pt;
+  }
+
+  .header-meta {
+    font-size: 9pt;
+    color: var(--text-muted);
+    margin: 2pt 0;
+  }
+
+  .header-contact {
+    font-size: 9pt;
+    margin-top: 8pt;
+    line-height: 1.55;
+  }
+
+  .header-contact a { color: #1d4ed8; text-decoration: none; }
+
+  .belt-badge {
+    display: inline-block;
+    margin-top: 6pt;
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--accent);
+    background: #fff;
+    border: 1pt solid var(--accent);
+    padding: 2pt 8pt;
+    border-radius: 3pt;
+  }
+
+  section { margin-bottom: 12pt; }
+
+  h2 {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    margin-bottom: 5pt;
+  }
+
+  .divider {
+    height: 2pt;
+    background: linear-gradient(to right, var(--accent), var(--accent-gold));
+    margin: 0 0 9pt 0;
+    border-radius: 1pt;
+  }
+
+  h3 {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 10pt 0 5pt 0;
+  }
+
+  h3:first-of-type { margin-top: 0; }
+
+  p {
+    font-size: 9.5pt;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 5pt;
+  }
+
+  ul { padding-left: 16pt; margin: 4pt 0; }
+
+  ul li {
+    font-size: 9.5pt;
+    color: #475569;
+    margin-bottom: 4pt;
+    line-height: 1.45;
+    list-style: none;
+    position: relative;
+    padding-left: 2pt;
+  }
+
+  ul li::before {
+    content: "▸";
+    position: absolute;
+    left: -14pt;
+    color: var(--accent-gold);
+    font-size: 8pt;
+  }
+
+  .goals-list li strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .result-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 6pt;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3pt;
+    padding: 1pt 5pt;
+    border-radius: 2pt;
+    flex-shrink: 0;
+    margin-top: 1pt;
+  }
+
+  .badge-campeao { background: var(--campeao-bg); color: var(--campeao); }
+  .badge-vice { background: var(--vice-bg); color: var(--vice); }
+  .badge-podio { background: var(--podio-bg); color: var(--podio); }
+  .badge-lider { background: var(--accent-soft); color: var(--accent); }
+
+  .two-col-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10pt 18pt;
+  }
+
+  .sponsor-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8pt;
+    margin-top: 6pt;
+  }
+
+  .tier-card {
+    border: 1pt solid var(--border);
+    border-radius: 4pt;
+    padding: 8pt;
+    font-size: 8.5pt;
+    text-align: center;
+  }
+
+  .tier-card h4 {
+    font-size: 9pt;
+    color: var(--accent);
+    margin-bottom: 4pt;
+    text-transform: uppercase;
+  }
+
+  .tier-card p { font-size: 8pt; margin: 0; color: var(--text-muted); }
+
+  .tier-bronze { border-top: 3pt solid #cd7f32; }
+  .tier-prata { border-top: 3pt solid #94a3b8; }
+  .tier-ouro { border-top: 3pt solid var(--accent-gold); }
+
+  .calendar-note {
+    font-size: 8.5pt;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 6pt;
+  }
+
+  .closing-photo {
+    margin: 16pt auto 0;
+    page-break-inside: avoid;
+  }
+
+  .closing-photo-frame {
+    position: relative;
+    width: 100%;
+    height: 260pt;
+    border: 1pt solid var(--accent);
+    border-radius: 6pt;
+    overflow: hidden;
+    background: var(--accent-soft);
+  }
+
+  .closing-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('IMGS/trajetoria-2.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(28px);
+    transform: scale(1.08);
+    opacity: 0.65;
+  }
+
+  .closing-photo-frame img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .quote-footer {
+    margin-top: 14pt;
+    padding-top: 10pt;
+    border-top: 1pt solid var(--border);
+    text-align: center;
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .page-break { page-break-before: always; }
+
+  @media print {
+    section { page-break-inside: auto; }
+    header, .executive-summary { page-break-inside: avoid; }
+    h2, h3 { page-break-after: avoid; }
+    .closing-photo, .closing-photo-frame { break-inside: avoid; }
+    .sponsor-tiers { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="doc-title">Currículo Esportivo · Proposta de Patrocínio — Judô de Alto Rendimento</p>
+
+  <div class="executive-summary">
+    <strong>Rodrigo Falcão</strong>, 13 anos, considerado uma das maiores promessas do Judô do Distrito Federal: campeão brasileiro SUB-15 (2026),
+    vice-campeão pan-americano SUB-13 (2024), vice-campeão sul-americano (2025) e líder do ranking de Brasília.
+    <strong>Oportunidade de patrocínio</strong> para empresas que desejam apoiar um atleta com projeção olímpica e resultados em competições estaduais, nacionais e internacionais.
+  </div>
+
+  <header>
+    <div class="header-left">
+      <img class="profile-photo" src="IMGS/perfil.jpeg" alt="Rodrigo Falcão">
+      <div class="instagram-block">
+        <svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#f09433"/>
+              <stop offset="25%" style="stop-color:#e6683c"/>
+              <stop offset="50%" style="stop-color:#dc2743"/>
+              <stop offset="75%" style="stop-color:#cc2366"/>
+              <stop offset="100%" style="stop-color:#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#igGrad)"/>
+          <circle cx="12" cy="12" r="4.5" fill="none" stroke="#fff" stroke-width="1.8"/>
+          <circle cx="17.2" cy="6.8" r="1.2" fill="#fff"/>
+        </svg>
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&amp;data=https://www.instagram.com/rodrigo.falcao.judo" alt="QR Code Instagram">
+        <a href="https://www.instagram.com/rodrigo.falcao.judo">@rodrigo.falcao.judo</a>
+      </div>
+    </div>
+    <div class="header-info">
+      <h1>Rodrigo Octávio Falcão Souza Jordão Ramos</h1>
+      <p class="header-subtitle">Atleta de Judô — Categoria de Base Nacional / Alto Rendimento</p>
+      <p class="header-meta">Nascimento: 11/08/2012 (13 anos) · FEMEJU DF · Academia Corpo Arte — Guará/DF</p>
+      <span class="belt-badge">Judô · Categoria SUB-15 · -55kg / -60kg</span>
+      <div class="header-contact">
+        E-mail: <a href="mailto:rofjramos@hotmail.com">rofjramos@hotmail.com</a><br>
+        Telefone: (61) 98153-1053
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Objetivo profissional e esportivo</h2>
+    <div class="divider"></div>
+    <p>Consolidar a carreira no alto rendimento do Judô brasileiro como uma das maiores promessas de Brasília para a modalidade, representando o Distrito Federal e o Brasil em circuitos nacionais e internacionais, com trajetória planejada da base à elite e <strong>visão de longo prazo rumo aos Jogos Olímpicos</strong>.</p>
+    <ul>
+      <li>Construir caminho formativo base → juvenil → sênior, com foco em seleções brasileiras e competições de elite.</li>
+      <li>Competir em eventos de referência nacional e internacional com regularidade e resultados consistentes.</li>
+      <li>Desenvolver excelência técnica, tática e física, aliada a disciplina, respeito e fair play.</li>
+      <li>Manter equilíbrio entre alto rendimento esportivo e formação escolar em andamento.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sonhos e metas de carreira</h2>
+    <div class="divider"></div>
+    <ul class="goals-list">
+      <li><strong>2026:</strong> Manter a liderança no ranking do DF; defender o título brasileiro SUB-15; ampliar presença no circuito internacional.</li>
+      <li><strong>2027–2030:</strong> Integrar seleções de base e juvenil; consolidar pódios em Pan-Americanos e Sul-Americanos; evoluir no programa de alto rendimento.</li>
+      <li><strong>Visão olímpica:</strong> Integrar centros de excelência do COB/CBJ e disputar vagas olímpicas nos ciclos vindouros (projeção a partir de 2032).</li>
+      <li><strong>Sonho:</strong> Representar o Brasil nos Jogos Olímpicos e elevar o Judô do Distrito Federal ao mais alto nível mundial.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Formação esportiva</h2>
+    <div class="divider"></div>
+    <ul>
+      <li><strong>Academia Corpo Arte</strong> — Guará/DF (clube formador e preparação técnica de Judô).</li>
+      <li><strong>FEMEJU DF</strong> — Federação Metropolitana de Judô do Distrito Federal (filiação e competições oficiais).</li>
+      <li><strong>Centro de Treinamento Invictus</strong> — Invictus Laboratório Atlético, 1º núcleo de alto rendimento esportivo de Brasília: preparação física, análise de desempenho e gestão de performance.</li>
+      <li><strong>Colégio Olimpo</strong> — formação escolar e participação nos Jogos Escolares do DF e Jogos Escolares Brasileiros (Série Ouro).</li>
+      <li><strong>Constrictor Team</strong> — Jiu-jitsu (complemento de luta e base para o combate no chão).</li>
+      <li>Categorias de competição: SUB-13 (2023/2024) e SUB-15 (2025/2026), com progressão técnica e competitiva contínua.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Perfil do atleta</h2>
+    <div class="divider"></div>
+    <p>Atleta de Judô em plena ascensão nacional, com resultados consistentes em campeonatos estaduais, regionais, nacionais e internacionais, representando disciplina, performance, resiliência e excelência competitiva.</p>
+    <ul>
+      <li>Atleta da categoria de base do Judô Brasileiro.</li>
+      <li><strong>SUB-15 Masculino</strong> (-55kg / -60kg) — 13 a 14 anos — 2025/2026.</li>
+      <li><strong>SUB-13 Masculino</strong> (-48kg / -50kg) — 11 a 12 anos — 2023/2024.</li>
+      <li>Trajetória marcada por títulos consecutivos e presença constante no pódio nacional.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Principais resultados</h2>
+    <div class="divider"></div>
+
+    <h3>2026</h3>
+    <ul>
+      <li class="result-item"><span class="badge badge-campeao">Campeão</span> Brasileiro de Judô SUB-15 — Nacional 2026</li>
+      <li class="result-item"><span class="badge badge-campeao">Campeão</span> Estadual de Judô — Brasília 2026</li>
+      <li class="result-item"><span class="badge badge-campeao">Campeão</span> Brasileiro Região IV — 2026</li>
+      <li class="result-item"><span class="badge badge-lider">Líder</span> Ranking Judô Brasília</li>
+    </ul>
+
+    <div class="two-col-results">
+      <div>
+        <h3>2025</h3>
+        <ul>
+          <li class="result-item"><span class="badge badge-vice">Vice</span> Sul-Americano de Judô — Assunção / Paraguai</li>
+          <li class="result-item"><span class="badge badge-podio">3º</span> Brasileiro de Judô SUB-15 — Nacional 2025</li>
+          <li class="result-item"><span class="badge badge-campeao">Campeão</span> Estadual de Judô — Brasília 2025</li>
+          <li class="result-item"><span class="badge badge-vice">2º</span> Brasileiro Região IV — 2025</li>
+          <li class="result-item"><span class="badge badge-campeao">Campeão</span> Jogos Escolares do Distrito Federal 2025</li>
+          <li class="result-item"><span class="badge badge-podio">3º</span> Jogos Escolares Brasileiros — Série Ouro 2025</li>
+          <li class="result-item"><span class="badge badge-lider">Líder</span> Ranking Judô Brasília 2025</li>
+        </ul>
+      </div>
+      <div>
+        <h3>2024</h3>
+        <ul>
+          <li class="result-item"><span class="badge badge-vice">Vice</span> Pan-Americano SUB-13 — Varadero / Cuba</li>
+          <li class="result-item"><span class="badge badge-campeao">Campeão</span> Brasileiro de Judô SUB-15 — Nacional 2024</li>
+          <li class="result-item"><span class="badge badge-campeao">Campeão</span> Estadual de Judô — Brasília 2024</li>
+          <li class="result-item"><span class="badge badge-campeao">Campeão</span> Brasileiro Região IV — 2024</li>
+          <li class="result-item"><span class="badge badge-lider">Líder</span> Ranking Judô Brasília</li>
+          <li class="result-item"><span class="badge badge-campeao">Campeão</span> XVIII Copa Minas 2024</li>
+          <li class="result-item"><span class="badge badge-campeao">Campeão</span> Jogos Escolares do Distrito Federal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-break">
+    <h2>Por que patrocinar?</h2>
+    <div class="divider"></div>
+    <ul>
+      <li>Associação da marca a valores como disciplina, superação e alta performance.</li>
+      <li>Fortalecimento institucional da empresa através do esporte.</li>
+      <li>Conexão emocional da marca com famílias, juventude e educação.</li>
+      <li>Exposição em competições estaduais, nacionais e internacionais.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contrapartidas ao patrocinador</h2>
+    <div class="divider"></div>
+    <ul>
+      <li>Inserção da marca em kimono e agasalhos oficiais.</li>
+      <li>Divulgação em redes sociais e materiais institucionais.</li>
+      <li>Participação em eventos corporativos e campanhas promocionais.</li>
+      <li>Presença da marca em campeonatos e conteúdos esportivos.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Objetivo do projeto de patrocínio</h2>
+    <div class="divider"></div>
+    <ul>
+      <li>Viabilizar participação em campeonatos nacionais e internacionais.</li>
+      <li>Custear preparação técnica, equipe multidisciplinar e deslocamentos.</li>
+      <li>Fortalecer a evolução esportiva rumo ao alto rendimento.</li>
+    </ul>
+    <p>Mais do que apoiar um atleta, trata-se de investir em um projeto de formação de campeão, conectando sua marca a uma trajetória vencedora, inspiradora e com enorme potencial de visibilidade e crescimento.</p>
+  </section>
+
+  <section>
+    <h2>Investimento e metas 2026</h2>
+    <div class="divider"></div>
+    <p>Proposta flexível de apoio — valores e benefícios a combinar conforme o interesse da empresa.</p>
+    <div class="sponsor-tiers">
+      <div class="tier-card tier-bronze">
+        <h4>Bronze</h4>
+        <p>Apoio em competições regionais e estaduais · menção em redes sociais</p>
+      </div>
+      <div class="tier-card tier-prata">
+        <h4>Prata</h4>
+        <p>Apoio em nacionais · logo em materiais · presença em eventos selecionados</p>
+      </div>
+      <div class="tier-card tier-ouro">
+        <h4>Ouro</h4>
+        <p>Patrocínio master · kimono/agasalho · internacionais · campanhas conjuntas</p>
+      </div>
+    </div>
+    <p class="calendar-note">Calendário competitivo 2026: Brasileiro, estaduais, Região IV e preparação para circuito internacional — detalhar datas sob consulta.</p>
+  </section>
+
+  <div class="closing-photo">
+    <div class="closing-photo-frame">
+      <div class="closing-photo-bg" aria-hidden="true"></div>
+      <img src="IMGS/trajetoria-2.jpeg" alt="Rodrigo Falcão em competição">
+    </div>
+  </div>
+
+  <p class="quote-footer">"Grandes marcas se conectam a grandes histórias."</p>
+
+</div>
+</body>
+</html>

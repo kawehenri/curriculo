@@ -5,9 +5,17 @@
   "main": "gerar_pdf.js",
   "scripts": {
     "gerar": "node gerar_pdf.js",
-    "gerar:elma": "node gerar_pdf_elma.js"
+    "gerar:elma": "node gerar_pdf_elma.js",
+    "gerar:falcao": "node gerar_pdf_falcao.js",
+    "comprimir:falcao": "node falcao/comprimir-imagens.js"
   },
-  "keywords": ["pdf", "curriculo"],
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  },
+  "keywords": [
+    "pdf",
+    "curriculo"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

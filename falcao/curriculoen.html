@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports Resume — Rodrigo Falcão</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #1e3a5f;
+    --accent-soft: #e8eef5;
+    --accent-gold: #b8860b;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --campeao: #166534;
+    --campeao-bg: #dcfce7;
+    --vice: #1d4ed8;
+    --vice-bg: #dbeafe;
+    --podio: #b45309;
+    --podio-bg: #fef3c7;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: var(--text);
+    font-size: 10pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page { size: A4; margin: 1.6cm 2cm; }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none !important; }
+  }
+
+  .page {
+    max-width: 794px;
+    margin: 0 auto;
+    padding: 20pt 24pt 26pt;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .doc-title {
+    text-align: center;
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.2pt;
+    margin-bottom: 12pt;
+    padding-bottom: 8pt;
+    border-bottom: 2pt solid var(--accent);
+  }
+
+  .executive-summary {
+    background: var(--accent-soft);
+    border-left: 4pt solid var(--accent-gold);
+    padding: 10pt 12pt;
+    margin-bottom: 14pt;
+    font-size: 9.5pt;
+    line-height: 1.55;
+  }
+
+  .executive-summary strong { color: var(--accent); }
+
+  header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16pt;
+    padding-bottom: 14pt;
+    margin-bottom: 12pt;
+    border-bottom: 1pt solid var(--border);
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10pt;
+    flex-shrink: 0;
+  }
+
+  .profile-photo {
+    width: 88pt;
+    height: 88pt;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3pt solid var(--accent-soft);
+    box-shadow: 0 2pt 8pt rgba(30, 58, 95, 0.15);
+  }
+
+  .instagram-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4pt;
+  }
+
+  .ig-icon { width: 18pt; height: 18pt; display: block; }
+  .qr-code { width: 48pt; height: 48pt; display: block; }
+
+  .instagram-block a {
+    font-size: 7.5pt;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .header-info { flex: 1; min-width: 0; }
+
+  header h1 {
+    font-size: 14pt;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.2;
+    margin-bottom: 5pt;
+  }
+
+  .header-subtitle {
+    font-size: 10pt;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 6pt;
+  }
+
+  .header-meta { font-size: 9pt; color: var(--text-muted); margin: 2pt 0; }
+  .header-contact { font-size: 9pt; margin-top: 8pt; line-height: 1.55; }
+  .header-contact a { color: #1d4ed8; text-decoration: none; }
+
+  .belt-badge {
+    display: inline-block;
+    margin-top: 6pt;
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--accent);
+    background: #fff;
+    border: 1pt solid var(--accent);
+    padding: 2pt 8pt;
+    border-radius: 3pt;
+  }
+
+  section { margin-bottom: 12pt; }
+
+  h2 {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    margin-bottom: 5pt;
+  }
+
+  .divider {
+    height: 2pt;
+    background: linear-gradient(to right, var(--accent), var(--accent-gold));
+    margin: 0 0 9pt 0;
+    border-radius: 1pt;
+  }
+
+  h3 { font-size: 10pt; font-weight: 700; color: #0f172a; margin: 10pt 0 5pt 0; }
+  h3:first-of-type { margin-top: 0; }
+
+  p { font-size: 9.5pt; color: #475569; line-height: 1.5; margin-bottom: 5pt; }
+  ul { padding-left: 16pt; margin: 4pt 0; }
+
+  ul li {
+    font-size: 9.5pt;
+    color: #475569;
+    margin-bottom: 4pt;
+    line-height: 1.45;
+    list-style: none;
+    position: relative;
+    padding-left: 2pt;
+  }
+
+  ul li::before {
+    content: "▸";
+    position: absolute;
+    left: -14pt;
+    color: var(--accent-gold);
+    font-size: 8pt;
+  }
+
+  .goals-list li strong { color: var(--accent); font-weight: 600; }
+
+  .result-item { display: flex; align-items: flex-start; gap: 6pt; flex-wrap: wrap; }
+
+  .badge {
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1pt 5pt;
+    border-radius: 2pt;
+    flex-shrink: 0;
+    margin-top: 1pt;
+  }
+
+  .badge-campeao { background: var(--campeao-bg); color: var(--campeao); }
+  .badge-vice { background: var(--vice-bg); color: var(--vice); }
+  .badge-podio { background: var(--podio-bg); color: var(--podio); }
+  .badge-lider { background: var(--accent-soft); color: var(--accent); }
+
+  .two-col-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10pt 18pt;
+  }
+
+  .sponsor-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8pt;
+    margin-top: 6pt;
+  }
+
+  .tier-card {
+    border: 1pt solid var(--border);
+    border-radius: 4pt;
+    padding: 8pt;
+    text-align: center;
+  }
+
+  .tier-card h4 { font-size: 9pt; color: var(--accent); margin-bottom: 4pt; text-transform: uppercase; }
+  .tier-card p { font-size: 8pt; margin: 0; color: var(--text-muted); }
+  .tier-bronze { border-top: 3pt solid #cd7f32; }
+  .tier-prata { border-top: 3pt solid #94a3b8; }
+  .tier-ouro { border-top: 3pt solid var(--accent-gold); }
+
+  .calendar-note { font-size: 8.5pt; color: var(--text-muted); font-style: italic; margin-top: 6pt; }
+
+  .closing-photo {
+    margin: 16pt auto 0;
+    page-break-inside: avoid;
+  }
+
+  .closing-photo-frame {
+    position: relative;
+    width: 100%;
+    height: 260pt;
+    border: 1pt solid var(--accent);
+    border-radius: 6pt;
+    overflow: hidden;
+    background: var(--accent-soft);
+  }
+
+  .closing-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('IMGS/trajetoria-2.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(28px);
+    transform: scale(1.08);
+    opacity: 0.65;
+  }
+
+  .closing-photo-frame img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .quote-footer {
+    margin-top: 14pt;
+    padding-top: 10pt;
+    border-top: 1pt solid var(--border);
+    text-align: center;
+    font-style: italic;
+    font-size: 10pt;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .page-break { page-break-before: always; }
+
+  @media print {
+    section { page-break-inside: auto; }
+    header, .executive-summary { page-break-inside: avoid; }
+    h2, h3 { page-break-after: avoid; }
+    .closing-photo, .closing-photo-frame { break-inside: avoid; }
+    .sponsor-tiers { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <p class="doc-title">Sports Resume · Sponsorship Proposal — High-Performance Judo</p>
+
+  <div class="executive-summary">
+    <strong>Rodrigo Falcão</strong>, age 13, regarded as one of the top judo prospects from Brasília: 2026 U15 National Champion,
+    2024 Pan-American U13 Vice-Champion, 2025 South American Vice-Champion, and #1 in the Federal District ranking.
+    <strong>Sponsorship opportunity</strong> for brands seeking to support an athlete with Olympic potential and results at state, national, and international events.
+  </div>
+
+  <header>
+    <div class="header-left">
+      <img class="profile-photo" src="IMGS/perfil.jpeg" alt="Rodrigo Falcão">
+      <div class="instagram-block">
+        <svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="igGradEn" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#f09433"/>
+              <stop offset="25%" style="stop-color:#e6683c"/>
+              <stop offset="50%" style="stop-color:#dc2743"/>
+              <stop offset="75%" style="stop-color:#cc2366"/>
+              <stop offset="100%" style="stop-color:#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#igGradEn)"/>
+          <circle cx="12" cy="12" r="4.5" fill="none" stroke="#fff" stroke-width="1.8"/>
+          <circle cx="17.2" cy="6.8" r="1.2" fill="#fff"/>
+        </svg>
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&amp;data=https://www.instagram.com/rodrigo.falcao.judo" alt="Instagram QR Code">
+        <a href="https://www.instagram.com/rodrigo.falcao.judo">@rodrigo.falcao.judo</a>
+      </div>
+    </div>
+    <div class="header-info">
+      <h1>Rodrigo Octávio Falcão Souza Jordão Ramos</h1>
+      <p class="header-subtitle">Judo Athlete — National Youth / High-Performance Category</p>
+      <p class="header-meta">Born: Aug 11, 2012 (age 13) · FEMEJU DF · Corpo Arte Academy — Guará/DF, Brazil</p>
+      <span class="belt-badge">Judo · U15 Category · -55kg / -60kg</span>
+      <div class="header-contact">
+        Email: <a href="mailto:rofjramos@hotmail.com">rofjramos@hotmail.com</a><br>
+        Phone: +55 (61) 98153-1053
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Career objective</h2>
+    <div class="divider"></div>
+    <p>Build a career in Brazilian high-performance judo as one of Brasília's top prospects for the sport, representing the Federal District and Brazil in national and international circuits, with a planned path from youth categories to elite competition and a <strong>long-term vision toward the Olympic Games</strong>.</p>
+    <ul>
+      <li>Follow a development path from youth to senior levels, targeting Brazilian national teams and elite competitions.</li>
+      <li>Compete regularly at benchmark national and international events with consistent results.</li>
+      <li>Pursue technical, tactical, and physical excellence grounded in discipline, respect, and fair play.</li>
+      <li>Balance high-performance sport with ongoing school education.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Dreams and career goals</h2>
+    <div class="divider"></div>
+    <ul class="goals-list">
+      <li><strong>2026:</strong> Maintain #1 ranking in the DF; defend the U15 national title; expand international competition schedule.</li>
+      <li><strong>2027–2030:</strong> Join youth and junior national teams; secure consistent podiums at Pan-American and South American events; advance in the high-performance program.</li>
+      <li><strong>Olympic vision:</strong> Integrate COB/CBJ excellence centers and compete for Olympic berths in upcoming cycles (projection from 2032 onward).</li>
+      <li><strong>Dream:</strong> Represent Brazil at the Olympic Games and elevate Federal District judo to the highest world level.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sports background</h2>
+    <div class="divider"></div>
+    <ul>
+      <li><strong>Corpo Arte Academy</strong> — Guará/DF (training club and judo technical development).</li>
+      <li><strong>FEMEJU DF</strong> — Metropolitan Judo Federation of the Federal District (affiliation and official competitions).</li>
+      <li><strong>Invictus Training Center</strong> — Invictus Athletic Lab, Brasília's first high-performance sports hub: physical preparation, performance analysis, and performance management.</li>
+      <li><strong>Olimpo School</strong> — academic education and participation in Federal District and Brazilian School Games (Gold Series).</li>
+      <li><strong>Constrictor Team</strong> — Jiu-jitsu (grappling complement and groundwork foundation).</li>
+      <li>Competition categories: U13 (2023/2024) and U15 (2025/2026), with continuous technical and competitive progression.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Athlete profile</h2>
+    <div class="divider"></div>
+    <p>Rising national judo talent with consistent results at state, regional, national, and international championships — embodying discipline, performance, resilience, and competitive excellence.</p>
+    <ul>
+      <li>Youth-category athlete in the Brazilian Judo Federation circuit.</li>
+      <li><strong>U15 Male</strong> (-55kg / -60kg) — ages 13–14 — 2025/2026.</li>
+      <li><strong>U13 Male</strong> (-48kg / -50kg) — ages 11–12 — 2023/2024.</li>
+      <li>Track record of consecutive titles and frequent national podium finishes.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key results</h2>
+    <div class="divider"></div>
+
+    <h3>2026</h3>
+    <ul>
+      <li class="result-item"><span class="badge badge-campeao">Champion</span> Brazilian Judo U15 National Championship</li>
+      <li class="result-item"><span class="badge badge-campeao">Champion</span> Brasília State Judo Championship</li>
+      <li class="result-item"><span class="badge badge-campeao">Champion</span> Brazilian Region IV Championship</li>
+      <li class="result-item"><span class="badge badge-lider">#1</span> Brasília Judo Ranking</li>
+    </ul>
+
+    <div class="two-col-results">
+      <div>
+        <h3>2025</h3>
+        <ul>
+          <li class="result-item"><span class="badge badge-vice">Vice</span> South American Judo Championship — Asunción, Paraguay</li>
+          <li class="result-item"><span class="badge badge-podio">3rd</span> Brazilian Judo U15 National Championship</li>
+          <li class="result-item"><span class="badge badge-campeao">Champion</span> Brasília State Judo Championship</li>
+          <li class="result-item"><span class="badge badge-vice">2nd</span> Brazilian Region IV Championship</li>
+          <li class="result-item"><span class="badge badge-campeao">Champion</span> Federal District School Games</li>
+          <li class="result-item"><span class="badge badge-podio">3rd</span> Brazilian School Games — Gold Series</li>
+          <li class="result-item"><span class="badge badge-lider">#1</span> Brasília Judo Ranking</li>
+        </ul>
+      </div>
+      <div>
+        <h3>2024</h3>
+        <ul>
+          <li class="result-item"><span class="badge badge-vice">Vice</span> Pan-American U13 Championship — Varadero, Cuba</li>
+          <li class="result-item"><span class="badge badge-campeao">Champion</span> Brazilian Judo U15 National Championship</li>
+          <li class="result-item"><span class="badge badge-campeao">Champion</span> Brasília State Judo Championship</li>
+          <li class="result-item"><span class="badge badge-campeao">Champion</span> Brazilian Region IV Championship</li>
+          <li class="result-item"><span class="badge badge-lider">#1</span> Brasília Judo Ranking</li>
+          <li class="result-item"><span class="badge badge-campeao">Champion</span> XVIII Copa Minas</li>
+          <li class="result-item"><span class="badge badge-campeao">Champion</span> Federal District School Games</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-break">
+    <h2>Why sponsor?</h2>
+    <div class="divider"></div>
+    <ul>
+      <li>Align your brand with discipline, perseverance, and high performance.</li>
+      <li>Strengthen corporate image through sport.</li>
+      <li>Emotional connection with families, youth, and education.</li>
+      <li>Visibility at state, national, and international competitions.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sponsor benefits</h2>
+    <div class="divider"></div>
+    <ul>
+      <li>Brand placement on official judogi and warm-up gear.</li>
+      <li>Promotion on social media and institutional materials.</li>
+      <li>Participation in corporate events and promotional campaigns.</li>
+      <li>Brand presence at championships and sports content.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sponsorship project goals</h2>
+    <div class="divider"></div>
+    <ul>
+      <li>Enable participation in national and international championships.</li>
+      <li>Fund technical preparation, multidisciplinary staff, and travel.</li>
+      <li>Support athletic development toward high-performance level.</li>
+    </ul>
+    <p>More than supporting an athlete, this is an investment in a champion-in-the-making — connecting your brand to a winning, inspiring journey with strong visibility and growth potential.</p>
+  </section>
+
+  <section>
+    <h2>Investment &amp; 2026 goals</h2>
+    <div class="divider"></div>
+    <p>Flexible support packages — values and benefits tailored to your company's interests.</p>
+    <div class="sponsor-tiers">
+      <div class="tier-card tier-bronze">
+        <h4>Bronze</h4>
+        <p>Regional/state events · social media mention</p>
+      </div>
+      <div class="tier-card tier-prata">
+        <h4>Silver</h4>
+        <p>National events · logo on materials · selected event presence</p>
+      </div>
+      <div class="tier-card tier-ouro">
+        <h4>Gold</h4>
+        <p>Master sponsorship · judogi/gear · internationals · joint campaigns</p>
+      </div>
+    </div>
+    <p class="calendar-note">2026 competition calendar: Brazilian, state, Region IV, and international circuit preparation — dates available on request.</p>
+  </section>
+
+  <div class="closing-photo">
+    <div class="closing-photo-frame">
+      <div class="closing-photo-bg" aria-hidden="true"></div>
+      <img src="IMGS/trajetoria-2.jpeg" alt="Rodrigo Falcão at competition">
+    </div>
+  </div>
+
+  <p class="quote-footer">"Great brands connect with great stories."</p>
+
+</div>
+</body>
+</html>
