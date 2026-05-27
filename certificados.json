@@ -1,0 +1,82 @@
+[
+  {
+    "titulo": "Lógica de Programação",
+    "tituloEn": "Programming Logic",
+    "emissor": "SENAI-DF",
+    "emissorEn": "SENAI-DF",
+    "data": null,
+    "credentialId": null,
+    "arquivo": "certificado.jpeg",
+    "competencias": ["Lógica de programação", "Algoritmos", "Pseudocódigo"]
+  },
+  {
+    "titulo": "Git e GitHub",
+    "tituloEn": "Git and GitHub",
+    "emissor": "SENAI-DF",
+    "emissorEn": "SENAI-DF",
+    "data": null,
+    "credentialId": null,
+    "arquivo": "certificado1.jpeg",
+    "competencias": ["Git", "GitHub", "Controle de versão", "Branches"]
+  },
+  {
+    "titulo": "Pacote Office (Word, Excel, PowerPoint)",
+    "tituloEn": "Microsoft Office Suite (Word, Excel, PowerPoint)",
+    "emissor": "SENAI-DF",
+    "emissorEn": "SENAI-DF",
+    "data": null,
+    "credentialId": null,
+    "arquivo": "certificado2.jpeg",
+    "competencias": ["Word", "Excel", "PowerPoint", "Produtividade"]
+  },
+  {
+    "titulo": "Python",
+    "tituloEn": "Python",
+    "emissor": "SENAI-DF",
+    "emissorEn": "SENAI-DF",
+    "data": null,
+    "credentialId": null,
+    "arquivo": "certificado3.jpeg",
+    "competencias": ["Python", "Programação orientada a objetos"]
+  },
+  {
+    "titulo": "Java",
+    "tituloEn": "Java",
+    "emissor": "SENAI-DF",
+    "emissorEn": "SENAI-DF",
+    "data": null,
+    "credentialId": null,
+    "arquivo": "certificado4.png",
+    "competencias": ["Java", "POO", "Desenvolvimento back-end"]
+  },
+  {
+    "titulo": "Banco de Dados",
+    "tituloEn": "Databases",
+    "emissor": "SENAI-DF",
+    "emissorEn": "SENAI-DF",
+    "data": null,
+    "credentialId": null,
+    "arquivo": "certificado_bancodedados.jpg",
+    "competencias": ["MySQL", "Modelagem de dados", "SQL", "Consultas"]
+  },
+  {
+    "titulo": "CSS Essentials",
+    "tituloEn": "CSS Essentials",
+    "emissor": "Cisco Networking Academy",
+    "emissorEn": "Cisco Networking Academy",
+    "data": "2024-05-19",
+    "credentialId": "e3691833-fe40-420e-9cd1-cdc9ced339fa",
+    "arquivo": "css.png",
+    "competencias": ["CSS", "Estilização web", "Layout", "Responsividade"]
+  },
+  {
+    "titulo": "Gerenciamento de ameaças cibernéticas",
+    "tituloEn": "Cyber Threat Management",
+    "emissor": "Cisco Networking Academy",
+    "emissorEn": "Cisco Networking Academy",
+    "data": "2026-05-07",
+    "credentialId": "4846c9e0-6835-43c6-9dc1-30ad81cb66d9",
+    "arquivo": "ameacas_ciberneticas.png",
+    "competencias": ["Segurança da informação", "Ameaças cibernéticas", "Cybersecurity", "Cisco"]
+  }
+]

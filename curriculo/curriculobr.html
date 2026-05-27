@@ -111,18 +111,40 @@
     border-radius: 2pt;
   }
 
-  /* ======== GALERIA DE CERTIFICADOS ======== */
-  .certificates-gallery {
+  /* ======== CERTIFICADOS (ATS: texto + imagem) ======== */
+  .certificates-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10pt;
+    gap: 12pt;
     margin: 10pt 0;
   }
-  .certificates-gallery img {
+  .certificate-card {
+    border: 1pt solid #D1D5DB;
+    padding: 8pt;
+    page-break-inside: avoid;
+  }
+  .certificate-card h3 {
+    font-size: 11pt;
+    margin: 0 0 4pt 0;
+    color: #111827;
+  }
+  .certificate-meta {
+    font-size: 9pt;
+    color: #6B7280;
+    margin: 2pt 0;
+  }
+  .certificate-id {
+    font-size: 8pt;
+    color: #6B7280;
+    word-break: break-all;
+    margin: 4pt 0;
+  }
+  .certificate-card .tags { margin: 4pt 0 6pt 0; }
+  .certificate-card img {
     width: 100%;
     height: auto;
-    border: 1pt solid black;
-    page-break-inside: avoid;
+    border: 1pt solid #9CA3AF;
+    margin-top: 6pt;
   }
 
   /* ======== QUEBRAS DE PÁGINA ======== */
@@ -162,7 +184,11 @@
       orphans: 2;
       widows: 2;
     }
-    .certificates-gallery img {
+    .certificate-card {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .certificate-card img {
       page-break-inside: avoid;
       break-inside: avoid;
     }
@@ -176,12 +202,12 @@
   <img src="../imgs/perfil.jpeg" alt="Foto de Henrique Kawê">
   <div class="header-info">
     <h1>Kawê Henrique</h1>
-    <p class="subtitle">Desenvolvedor Web Full-Stack | Laravel · React · MySQL</p>
-    <p class="contact">📧 kawehenri@gmail.com<br>📞 (61) 9 8627-9308<br>📍 Samambaia Norte – DF / Águas Lindas de Goiás - GO</p>
+    <p class="subtitle">Desenvolvedor Full-Stack | Mobile (Flutter, React Native) | Laravel · React · MySQL</p>
+    <p class="contact">E-mail: kawehenri@gmail.com<br>Telefone: (61) 9 8627-9308<br>Local: Samambaia Norte – DF / Águas Lindas de Goiás - GO</p>
     <div class="social-links">
-      <a href="https://github.com/kawehenri" target="_blank" rel="noopener">🔗 GitHub</a>
-      <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-      <a href="https://kawehenri.site" target="_blank" rel="noopener">🔗 Portfólio</a>
+      <a href="https://github.com/kawehenri" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://kawehenri.site" target="_blank" rel="noopener">Portfólio</a>
     </div>
   </div>
 </header>
@@ -202,8 +228,11 @@
     <li>Banco de Dados: MySQL</li>
     <li>Back-end: Python, PHP, Laravel</li>
     <li>Front-end: HTML, CSS, JavaScript, React</li>
-    <li>Desenvolvimento e consumo de APIs REST</li>
+    <li>Mobile: Flutter, React Native</li>
+    <li>Publicação de apps: Google Play Console, Apple App Store Connect</li>
+    <li>Desenvolvimento e consumo de APIs REST; integrações com gateways de pagamento (Mercado Pago, Cielo, Asaas)</li>
     <li>Versionamento de código: Git e GitHub</li>
+    <li>Low-code / prototipagem: Lovable</li>
     <li>Fundamentos de UI/UX aplicados a interfaces web (usabilidade, hierarquia visual e responsividade)</li>
     <li>Levantamento de requisitos com usuários (entrevistas e validação de necessidades)</li>
     <li>Excel (planilhas, consultas e controle de dados)</li>
@@ -234,10 +263,51 @@
     <li>Desenvolvimento de sistemas web com PHP, Laravel, HTML, CSS e JavaScript</li>
     <li>Manutenção, correção de bugs e melhorias em sistemas existentes</li>
     <li>Manipulação e consultas em banco de dados MySQL</li>
+    <li>Participação em projetos de clientes da empresa: integrações de APIs, gateways de pagamento e publicação de apps nas lojas Google Play e Apple App Store</li>
     <li>Aplicação de princípios de UI/UX na melhoria de fluxos e interfaces</li>
     <li>Atendimento direto a clientes para levantamento de requisitos, escuta ativa e resolução de demandas</li>
     <li>Participação em reuniões de planejamento e acompanhamento de projetos</li>
     <li>Controle de versão com Git e aplicação de boas práticas de programação</li>
+  </ul>
+
+  <p style="font-size: 10pt; font-weight: 600; margin: 12pt 0 4pt 0;"><strong>Entregas profissionais — projetos de clientes (DF Informática)</strong></p>
+  <p style="font-size: 9pt; color: #6B7280; margin: 0 0 8pt 0;">Atuação no desenvolvimento, integrações e manutenção de sistemas contratados pela empresa. Projetos de clientes — não autoria pessoal.</p>
+
+  <h3 style="font-size: 11pt; margin-top: 10pt;">iDucali — Sistema de gestão e leads</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 6pt 0;"><a href="https://sistema.iducali.com.br" target="_blank" rel="noopener">sistema.iducali.com.br</a></p>
+  <ul>
+    <li>Integração com API de WhatsApp para comunicação com leads</li>
+    <li>Links externos de compra (Hotmart) e de outros ramos conectados ao sistema via leads e scripts</li>
+    <li>Integração de pagamentos com Mercado Pago</li>
+  </ul>
+
+  <h3 style="font-size: 11pt; margin-top: 10pt;">Calheiro Orça Fácil — App e web (cliente)</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 6pt 0;"><a href="https://app.calheiroorcafacil.com.br" target="_blank" rel="noopener">app.calheiroorcafacil.com.br</a> | <a href="https://apps.apple.com/us/app/calheiro/id6767645060" target="_blank" rel="noopener">App Store</a> | <a href="https://play.google.com/store/apps/details?id=calheiroOrcaFacil.myapp" target="_blank" rel="noopener">Google Play</a></p>
+  <ul>
+    <li>Participação na publicação e manutenção do app na Google Play (Android) e Apple App Store (iOS)</li>
+    <li>Integração com Asaas para processamento de pagamentos</li>
+    <li>Desenvolvimento com Flutter/React Native e back-end Laravel</li>
+  </ul>
+
+  <h3 style="font-size: 11pt; margin-top: 10pt;">Psykhedh — Site de clínica (cliente)</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 6pt 0;"><a href="https://psykhedh.com.br" target="_blank" rel="noopener">psykhedh.com.br</a></p>
+  <ul>
+    <li>Site institucional com integração de inteligência artificial</li>
+    <li>Interface responsiva e fluxos de atendimento digital</li>
+  </ul>
+
+  <h3 style="font-size: 11pt; margin-top: 10pt;">Autentica by Silvia — E-commerce (cliente)</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 6pt 0;"><a href="https://autenticabysilvia.com.br" target="_blank" rel="noopener">autenticabysilvia.com.br</a></p>
+  <ul>
+    <li>Loja virtual com catálogo e checkout</li>
+    <li>Envio de e-mails transacionais e integração com Mercado Pago e Cielo</li>
+  </ul>
+
+  <h3 style="font-size: 11pt; margin-top: 10pt;">TendTudo Jaru (cliente)</h3>
+  <p style="font-size: 9pt; color: #6B7280; margin: 4pt 0 6pt 0;"><a href="https://tendtudojaru.com.br" target="_blank" rel="noopener">tendtudojaru.com.br</a></p>
+  <ul>
+    <li>Integração com Google Maps para localização e experiência do usuário</li>
+    <li>Desenvolvimento web com APIs REST e interface responsiva</li>
   </ul>
 
   <h3>Auxiliar Administrativo e Atendimento — Pessoa Promotora</h3>
@@ -267,24 +337,73 @@
   </ul>
 </section>
 
-<section>
+<section id="certificados">
   <h2>CERTIFICADOS</h2>
   <div class="section-divider"></div>
-  <ul>
-    <li>Lógica de Programação</li>
-    <li>Git e GitHub</li>
-    <li>Pacote Office (Word, Excel, PowerPoint)</li>
-    <li>Python</li>
-    <li>Java</li>
-    <li>Banco de Dados</li>
-  </ul>
-  <div class="certificates-gallery">
-    <img src="../imgs/certificado.jpeg" alt="Certificado de Lógica de Programação">
-    <img src="../imgs/certificado1.jpeg" alt="Certificado de Git e GitHub">
-    <img src="../imgs/certificado2.jpeg" alt="Certificado de Pacote Office">
-    <img src="../imgs/certificado3.jpeg" alt="Certificado de Python">
-    <img src="../imgs/certificado4.png" alt="Certificado de Java">
-    <img src="../imgs/certificado_bancodedados.jpg" alt="Certificado de Banco de Dados">
+  <p class="certificate-meta" style="margin-bottom: 8pt;">8 certificados concluídos — metadados verificáveis para triagem ATS e validação por ID (Cisco Networking Academy).</p>
+
+  <div class="certificates-list">
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">Lógica de Programação</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">SENAI-DF</span></p>
+      <div class="tags"><span>Lógica de programação</span><span>Algoritmos</span><span>Pseudocódigo</span></div>
+      <img src="../imgs/certificado.jpeg" alt="Certificado Lógica de Programação — SENAI-DF — Kawê Henrique" itemprop="image">
+    </article>
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">Git e GitHub</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">SENAI-DF</span></p>
+      <div class="tags"><span>Git</span><span>GitHub</span><span>Controle de versão</span></div>
+      <img src="../imgs/certificado1.jpeg" alt="Certificado Git e GitHub — SENAI-DF — Kawê Henrique" itemprop="image">
+    </article>
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">Pacote Office (Word, Excel, PowerPoint)</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">SENAI-DF</span></p>
+      <div class="tags"><span>Word</span><span>Excel</span><span>PowerPoint</span></div>
+      <img src="../imgs/certificado2.jpeg" alt="Certificado Pacote Office — SENAI-DF — Kawê Henrique" itemprop="image">
+    </article>
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">Python</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">SENAI-DF</span></p>
+      <div class="tags"><span>Python</span><span>POO</span></div>
+      <img src="../imgs/certificado3.jpeg" alt="Certificado Python — SENAI-DF — Kawê Henrique" itemprop="image">
+    </article>
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">Java</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">SENAI-DF</span></p>
+      <div class="tags"><span>Java</span><span>POO</span><span>Back-end</span></div>
+      <img src="../imgs/certificado4.png" alt="Certificado Java — SENAI-DF — Kawê Henrique" itemprop="image">
+    </article>
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">Banco de Dados</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">SENAI-DF</span></p>
+      <div class="tags"><span>MySQL</span><span>SQL</span><span>Modelagem de dados</span></div>
+      <img src="../imgs/certificado_bancodedados.jpg" alt="Certificado Banco de Dados — SENAI-DF — Kawê Henrique" itemprop="image">
+    </article>
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">CSS Essentials</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">Cisco Networking Academy</span></p>
+      <p class="certificate-meta"><strong>Conclusão:</strong> <time itemprop="dateCreated" datetime="2024-05-19">19/05/2024</time></p>
+      <p class="certificate-id"><strong>ID do certificado:</strong> <span itemprop="identifier">e3691833-fe40-420e-9cd1-cdc9ced339fa</span></p>
+      <div class="tags"><span>CSS</span><span>Layout web</span><span>Responsividade</span></div>
+      <img src="../imgs/css.png" alt="Certificado CSS Essentials — Cisco Networking Academy — Kawê Henrique — 19/05/2024" itemprop="image">
+    </article>
+
+    <article class="certificate-card" itemscope itemtype="https://schema.org/EducationalOccupationalCredential">
+      <h3 itemprop="name">Gerenciamento de ameaças cibernéticas</h3>
+      <p class="certificate-meta"><strong>Emissor:</strong> <span itemprop="recognizedBy">Cisco Networking Academy</span></p>
+      <p class="certificate-meta"><strong>Conclusão:</strong> <time itemprop="dateCreated" datetime="2026-05-07">07/05/2026</time></p>
+      <p class="certificate-id"><strong>ID do certificado:</strong> <span itemprop="identifier">4846c9e0-6835-43c6-9dc1-30ad81cb66d9</span></p>
+      <div class="tags"><span>Segurança da informação</span><span>Cybersecurity</span><span>Cisco</span></div>
+      <img src="../imgs/ameacas_ciberneticas.png" alt="Certificado Gerenciamento de ameaças cibernéticas — Cisco Networking Academy — Kawê Henrique — 07/05/2026" itemprop="image">
+    </article>
+
   </div>
 </section>
 
@@ -295,6 +414,9 @@
   <h3>Ferramentas e Tecnologias</h3>
   <ul>
     <li>Git e GitHub</li>
+    <li>Flutter e React Native</li>
+    <li>Google Play Console e Apple App Store Connect</li>
+    <li>Lovable (prototipagem low-code)</li>
     <li>Arduino e projetos de automação (IoT)</li>
     <li>Metodologias Ágeis (Scrum e Kanban)</li>
     <li>Pacote Office (Word, Excel, PowerPoint)</li>
