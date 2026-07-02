@@ -1,6 +1,19 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
+const fs = require('fs');
 const { pathToFileURL } = require('url');
+
+function resolveBrowserExecutable() {
+  const candidates = [
+    process.env.PUPPETEER_EXECUTABLE_PATH,
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    `${process.env.LOCALAPPDATA}\\Google\\Chrome\\Application\\chrome.exe`,
+    'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+    'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+  ].filter(Boolean);
+
+  return candidates.find((candidate) => fs.existsSync(candidate));
+}
 
 async function gerarPDF(page, htmlPath, pdfPath) {
   await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
@@ -23,6 +36,7 @@ async function main() {
 
   const browser = await puppeteer.launch({
     headless: true,
+    executablePath: resolveBrowserExecutable(),
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
