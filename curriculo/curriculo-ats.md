@@ -3,7 +3,7 @@
 Desenvolvedor Full-Stack | Mobile (Flutter, React Native) | Laravel · React · MySQL
 
 **E-mail:** kawehenri@gmail.com | **Telefone:** (61) 9 8627-9308 | **Local:** Samambaia Norte – DF / Águas Lindas de Goiás - GO
-**GitHub:** https://github.com/kawehenri | **LinkedIn:** https://www.linkedin.com/in/kaw%C3%AA-henrique-67308630a/ | **Portfólio:** https://kawehenri.site
+**GitHub:** https://github.com/kawehenri | **LinkedIn:** https://www.linkedin.com/in/kawehenri/ | **Portfólio:** https://kawehenri.site
 
 ## Objetivo
 
